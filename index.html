@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Home</title>
+		<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
+		<style>
+			model-viewer {
+				width: 100%;
+				height: 500px;
+				background-color: #EEE;
+			}
+		</style>
+	</head>
+<body>
+	<header>
+		<h1>Lemon Banjo and Supply</h1>
+		<nav>
+			<a href="#">About</a>
+			<a href="#">Shop</a>
+			<a href="#">Repair</a>
+			<a href="#">Design a Banjo</a>
+			<a href="#">Hear Lemon Banjos</a>
+			<a href="#">Blog</a>
+		</nav>
+	</header>
+
+	<div id="testing_div">
+		<model-viewer 
+			src="assets/3DModels/test5.glb"
+			alt="3D model"
+			auto-rotate
+			camera-controls>
+		</model-viewer>
+	</div>
+</body>
+</html>
