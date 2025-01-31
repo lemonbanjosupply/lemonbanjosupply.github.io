@@ -7,8 +7,16 @@
 		<style>
 			model-viewer {
 				width: 100%;
-				height: 500px;
+				height: 750px;
 				background-color: #EEE;
+			}
+			.container {
+				display: flex;
+			}
+			
+			.box {
+				width: 50%;
+				padding: 20px;
 			}
 		</style>
 	</head>
@@ -24,14 +32,50 @@
 			<a href="#">Blog</a>
 		</nav>
 	</header>
-
-	<div id="testing_div">
-		<model-viewer 
-			src="assets/3DModels/test5.glb"
-			alt="3D model"
-			auto-rotate
-			camera-controls>
-		</model-viewer>
+	
+	<div class="container">
+		<div class="box" id="option_selector">
+			<h2>Options</h2>
+			<form>
+			<details>
+				<summary>Option 1</summary>
+				<label>Choose an option: </label>
+				<select name="opt1" id="opt1">
+					<option value="choice1">Choice 1</option>
+					<option value="choice2">Choice 2</option>
+				</select>
+				<br>
+				<label>Choose an option: </label>
+				<select name="opt2" id="opt2">
+					<option value="choice1">Choice 1</option>
+					<option value="choice2">Choice 2</option>
+				</select>
+			</details>
+			<details>
+				<summary>Option 2</summary>
+				<label>Choose an option: </label>
+				<select name="opt3" id="opt3">
+					<option value="choice1">Choice 1</option>
+					<option value="choice2">Choice 2</option>
+				</select>
+				<br>
+				<label>Choose an option: </label>
+				<select name="opt4" id="opt4">
+					<option value="choice1">Choice 1</option>
+					<option value="choice2">Choice 2</option>
+				</select>
+			</details>
+			</form>
+		</div>
+	
+		<div class="box" id="model_display">
+			<model-viewer 
+				src="assets/3DModels/test5.glb"
+				alt="3D model"
+				auto-rotate
+				camera-controls>
+			</model-viewer>
+		</div>
 	</div>
 </body>
 </html>
