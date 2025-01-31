@@ -5,10 +5,16 @@
 		<title>75 Custom Designer - Lemon Banjo and Supply</title>
 		<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
 		<style>
+			html, body {
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+			}
+			
 			model-viewer {
-				width: 100%;
-				height: 750px;
-				background-color: #EEE;
+				width: 300px;
+				height: 600px;
+				background-color: gray;
 			}
 			.container {
 				display: flex;
@@ -17,6 +23,23 @@
 			.box {
 				width: 50%;
 				padding: 20px;
+			}
+			
+			header {
+				position: sticky;
+				height: 150px;
+				text-align: center;
+			}
+			
+			#model_display {
+				position: sticky;
+				top: 60px;
+			}
+			
+			#option_selector {
+				height: calc(100vh - 60px); /* Ensure it fills available space */
+				min-height: 100%; /* Prevents collapsing when content is small */
+				overflow-y: auto; /* Enables scrolling when content exceeds height */
 			}
 		</style>
 	</head>
@@ -73,8 +96,11 @@
 				src="assets/3DModels/test5.glb"
 				alt="3D model"
 				auto-rotate
-				camera-controls>
+				auto-rotate-delay="2000"
+				rotation-per-second="30deg">
 			</model-viewer>
+			<h3>3D Viewer Controls</h3>
+			<p>Left Mouse: Rotate<br>Right Mouse: Pan<br>Scroll: Zoom</p>
 		</div>
 	</div>
 </body>
