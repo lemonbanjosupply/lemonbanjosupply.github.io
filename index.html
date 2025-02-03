@@ -4,51 +4,7 @@
 		<meta charset="UTF-8">
 		<title>75 Custom Designer - Lemon Banjo and Supply</title>
 		<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
-		<style>
-			html, body {
-				overflow: hidden;
-				display: flex;
-				flex-direction: column;
-			}
-			
-			model-viewer {
-				display: flex;
-				width: 80%;
-				height: 700px;
-				background-color: gray;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			.container {
-				width: 75%;
-				display: flex;
-				margin-left: auto;
-				margin-right: auto;
-				background-color: lightgray;
-			}
-			
-			.box {
-				width: 50%;
-				padding: 20px;
-			}
-			
-			header {
-				position: sticky;
-				height: 100px;
-				text-align: center;
-			}
-			
-			#model_display {
-				position: sticky;
-				top: 60px;
-			}
-			
-			#option_selector {
-				height: calc(100vh - 60px); /* Ensure it fills available space */
-				min-height: 100%; /* Prevents collapsing when content is small */
-				overflow-y: auto; /* Enables scrolling when content exceeds height */
-			}
-		</style>
+		<link rel="stylesheet" href="assets/css/styles.css">
 	</head>
 <body>
 	<header>
