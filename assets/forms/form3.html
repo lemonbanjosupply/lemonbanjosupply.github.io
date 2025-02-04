@@ -5,18 +5,41 @@
 		<title></title>
 	</head>
 <body>
-	<h2>Neck</h2>
-	<form id="neck">
-	<h3>What type of wood for your neck?</h3>
-		<label for="neckWood">Straight Maple</label>
-		<input type="radio" id="strMpl" name="neckWood"><br>
-		<label for="neckWood">Mahogany</label>
-		<input type="radio" id="mahog" name="neckWood"><br>
-		<label for="neckWood">Walnut</label>
-		<input type="radio" id="walnut" name="neckWood"><br>
-		<label for="neckWood">Curly Maple</label>
-		<input type="radio" id="curMpl" name="neckWood"><br>
+	<h2>Neck and Fretboard</h2>
+		<form id="neck">
+		<!-- Neck Wood -->
+		<div class="optionDiv">
+			<h3>What type of wood for your neck?</h3>
+			<input type="radio" id="strMpl" name="neckWood">
+			<label for="strMpl">Straight Maple</label><br>
+
+			<input type="radio" id="mahog" name="neckWood">
+			<label for="mahog">Mahogany</label><br>
+
+			<input type="radio" id="walnut" name="neckWood">
+			<label for="walnut">Walnut</label><br>
+
+			<input type="radio" id="curMpl" name="neckWood">
+			<label for="curMpl">Curly Maple</label><br>
+		</div>
+
+		<!-- Scale Length -->
+		<div class="optionDiv">
+			<h3>What scale length would you like?</h3>
+			<input type="radio" id="2512sc" name="scale">
+			<label for="2512sc">25 1/2"</label><br>
+
+			<input type="radio" id="2614sc" name="scale">
+			<label for="2614sc">26 1/4" (Bowtie)</label><br>
+
+			<input type="radio" id="2638sc" name="scale">
+			<label for="2638sc">26 3/8" (Prewar)</label><br>
+		</div>
 		
+		<!-- Nut Width-->
+		<div class="optionDiv">
+		</div>
 	</form>
+
 </body>
 </html>
