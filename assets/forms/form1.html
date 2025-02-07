@@ -9,26 +9,21 @@
 		<!-- Banjo Type -->
 		<div class="optionDiv"> 
 			<h3>What type of banjo are you interested in?</h3>
-			<input type="radio" id="resoBanjo" name="banjoType">
-			<label for="resoBanjo">Resonator Banjo (Bluegrass)</label><br>
-
-			<input type="radio" id="open11" name="banjoType">
-			<label for="open11">11-inch Open Back Banjo (Oldtime)</label><br>
-
-			<input type="radio" id="open12" name="banjoType">
-			<label for="open12">12-inch Open Back Banjo (Oldtime)</label><br>
+			<select name="banjoType" id="banjoTypeSelect">
+				<option value="resoBanjo">Resonator Banjo (Bluegrass)</option>
+				<option value="open11" disabled>11-inch Open Back Banjo (Oldtime)</option>
+				<option value="open12" disabled>12-inch Open Back Banjo (Oldtime)</option>
+			</select>
 		</div>
-		
+	
 		<!-- Right or Left Hand -->
 		<div class="optionDiv">
-			<h3>Will your banjo be left handed or right handed?</h3>
-			<input type="radio" id="right" name="RightLeft">
-			<label for="right">Right-handed</label><br>
-
-			<input type="radio" id="left" name="RightLeft">
-			<label for="left">Left-handed</label><br>
+			<h3>Will your banjo be left-handed or right-handed?</h3>
+			<select name="RightLeft" id="RightLeftSelect">
+				<option value="right">Right-handed</option>
+				<option value="left" disabled>Left-handed</option>
+			</select>
 		</div>
 	</form>
-
 </body>
 </html>

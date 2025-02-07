@@ -6,38 +6,103 @@
 	</head>
 <body>
 	<h2>Neck and Fretboard</h2>
-		<form id="neck">
+	<form id="neck">
 		<!-- Neck Wood -->
 		<div class="optionDiv">
 			<h3>What type of wood for your neck?</h3>
-			<input type="radio" id="strMpl" name="neckWood">
-			<label for="strMpl">Straight Maple</label><br>
-
-			<input type="radio" id="mahog" name="neckWood">
-			<label for="mahog">Mahogany</label><br>
-
-			<input type="radio" id="walnut" name="neckWood">
-			<label for="walnut">Walnut</label><br>
-
-			<input type="radio" id="curMpl" name="neckWood">
-			<label for="curMpl">Curly Maple</label><br>
+			<select name="neckWood" id="neckWoodSelect">
+				<option value="strMpl">Straight Maple</option>
+				<option value="mahog">Mahogany</option>
+				<option value="walnut">Walnut</option>
+				<option value="curMpl">Curly Maple</option>
+			</select>
 		</div>
 
 		<!-- Scale Length -->
 		<div class="optionDiv">
 			<h3>What scale length would you like?</h3>
-			<input type="radio" id="2512sc" name="scale">
-			<label for="2512sc">25 1/2"</label><br>
+			<select name="scale" id="scaleSelect">
+				<option value="25-1/2sc" disabled>25 1/2"</option>
+				<option value="26-1/4sc" disabled>26 1/4" (Bowtie)</option>
+				<option value="26-3/8sc">26 3/8" (Prewar)</option>
+			</select>
+		</div>
 
-			<input type="radio" id="2614sc" name="scale">
-			<label for="2614sc">26 1/4" (Bowtie)</label><br>
-
-			<input type="radio" id="2638sc" name="scale">
-			<label for="2638sc">26 3/8" (Prewar)</label><br>
+		<!-- Nut Width -->
+		<div class="optionDiv">
+			<h3>What nut width would you like?</h3>
+			<select name="nut" id="nutSelect">
+				<option value="1-3/16nut">1 3/16" (Standard)</option>
+				<option value="1-1/4nut" disabled>1 1/4"</option>
+				<option value="1-5/16nut" disabled disabled>1 5/16" (Crowe)</option>
+				<option value="1-3/8nut" disabled>1 3/8"</option>
+			</select>
 		</div>
 		
-		<!-- Nut Width-->
+		<!-- Fretboard Radius -->
 		<div class="optionDiv">
+			<h3>Would you like a radiused fretboard?</h3>
+			<select name="radius" id="radiusSelect">
+				<option value="noRadius">No Radius</option>
+				<option value="12SimRadius" disabled>12" Simple Radius</option>
+			</select>
+		</div>
+		
+		<!-- Number of Frets -->
+		<div class="optionDiv">
+			<h3>How many frets?</h3>
+			<select name="numFrets" id="numFretsSelect">
+				<option value="15frets" disabled>15 + 2 frets with Scoop</option>
+				<option value="22frets">22 frets</option>
+				<option value="24frets" disabled>24 frets with extended fretboard</option>
+			</select>
+		</div>
+		
+		<!-- Fretboard Wood -->
+		<div class="optionDiv">
+			<h3>What type of wood for your fretboard?</h3>
+			<select name="fbWood" id="fbWoodSelect">
+				<option value="fbRose">Rosewood</option>
+				<option value="fbEbony">Ebony</option>
+				<option value="fbYellow" disabled>Yellowheart</option>
+			</select>
+		</div>
+		
+		<!-- Fretboard Inlay Material -->
+		<div class="optionDiv">
+			<h3>What type of inlay material in your fretboard?</h3>
+			<select name="fbInlayMat" id="fbInlayMatSelect">
+				<option value="fbWMop">White Mother of Pearl</option>
+				<option value="fbAbalone">Abalone</option>
+			</select>
+		</div>
+		
+		<!-- Fretboard Inlay Pattern -->
+		<div class="optionDiv">
+			<h3>What type of inlay material in your fretboard?</h3>
+			<select name="fbInlayPat" id="fbInlayPatSelect">
+				<option value="dots1">Dots: 5, 7, 10, 12, 15</option>
+				<option value="dots2">Dots: 5, 7, 10, 12, 15, 17</option>
+				<option value="dots3">Dots: 5, 7, 10, 12, 15, 17, 19, 22</option>
+				<option value="dots4">Dots: 3, 5, 7, 10, 12, 15, 17, 19, 22</option>
+				<option value="diamSq">Diamonds and Squares</option>
+				<option value="seagulls">Seagulls</option>
+				<option value="bowties1">Bowties w/ 22nd</option>
+				<option value="bowties2">Bowties w/o 22nd</option>
+				<option value="leavB1">Leaves and Bows 1</option>
+				<option value="leavB2">Leaves and Bows 2</option>
+				<option value="leavB3">Leaves and Bows 3</option>
+				<option value="flyEag">Flying Eagles</option>
+				<option value="wreath">Wreath</option>
+				<option value="rb7">RB-7</option>
+				<option value="rb12">RB-12/18</option>
+				<option value="blackJ">Blackjack</option>
+				<option value="hearts1">Hearts and Flowers</option>
+				<option value="hearts2">Hearts and Flowers w/ 15th</option>
+				<option value="hearts3">Hearts and Flowers w/ 1st and 15th</option>
+				<option value="floren">Florentine</option>
+				<option value="bella">Bella Voce</option>
+			</select>
 		</div>
 	</form>
 

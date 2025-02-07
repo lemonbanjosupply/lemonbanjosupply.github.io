@@ -6,159 +6,108 @@
 	</head>
 <body>
 	<h2>Pot Assembly for Open Back Banjos</h2>
-		<form id="openPot">
+	<form id="openPot">
 		<!-- Rim Wood -->
 		<div class="optionDiv">
 			<h3>What type of wood would you like your rim to be built from?</h3>
-			<input type="radio" id="rMplRim" name="rimWood">
-			<label for="rMplRim">Red Maple</label><br>
-
-			<input type="radio" id="tRMplRim" name="rimWood">
-			<label for="tRMplRim">Torrefied Red Maple</label><br>
-
-			<input type="radio" id="hMplRim" name="rimWood">
-			<label for="hMplRim">Hard Maple</label><br>
-
-			<input type="radio" id="tHMplRim" name="rimWood">
-			<label for="tHMplRim">Torrefied Hard Maple</label><br>
-
-			<input type="radio" id="mahogRim" name="rimWood">
-			<label for="mahogRim">Mahogany</label><br>
-
-			<input type="radio" id="bCherRim" name="rimWood">
-			<label for="bCherRim">Black Cherry</label><br>
-
-			<input type="radio" id="walRim" name="rimWood">
-			<label for="walRim">Black Walnut</label><br>
-
-			<input type="radio" id="yBirRim" name="rimWood">
-			<label for="yBirRim">Yellow Birch</label><br>
-
-			<input type="radio" id="tYBirRim" name="rimWood">
-			<label for="tYBirRim">Torrefied Yellow Birch</label><br>
+			<select name="rimWood" id="rimWoodSelect">
+				<option value="rMplRim">Red Maple</option>
+				<option value="tRMplRim">Torrefied Red Maple</option>
+				<option value="hMplRim">Hard Maple</option>
+				<option value="tHMplRim">Torrefied Hard Maple</option>
+				<option value="mahogRim">Mahogany</option>
+				<option value="bCherRim">Black Cherry</option>
+				<option value="walRim">Black Walnut</option>
+				<option value="yBirRim">Yellow Birch</option>
+				<option value="tYBirRim">Torrefied Yellow Birch</option>
+			</select>
 		</div>
 
-		<!-- Tone Ring Selection-->
+		<!-- Tone Ring Selection -->
 		<div class="optionDiv">
 			<h3>What type of tone ring?</h3>
-			<input type="radio" id="RB00" name="toneRing">
-			<label for="RB00">Wooden Bead (like an RB-00)</label><br>
-
-			<input type="radio" id="14F" name="toneRing">
-			<label for="14F">1/4" Brass Hoop - Flathead Type</label><br>
-
-			<input type="radio" id="14A" name="toneRing">
-			<label for="14A">1/4" Brass Hoop - Archtop Type</label><br>
-
-			<input type="radio" id="IFW" name="toneRing">
-			<label for="IFW">Integrated Flathead Woodie</label><br>
-
-			<input type="radio" id="IAW" name="toneRing">
-			<label for="IAW">Integrated Archtop Woodie</label><br>
-
-			<input type="radio" id="IAFW" name="toneRing">
-			<label for="IAFW">Integrated Almost Flathead Woodie</label><br>
-
-			<input type="radio" id="EZ" name="toneRing">
-			<label for="EZ">EZ-Swap Wooden Tone Ring</label><br>
-
-			<input type="radio" id="metal" name="toneRing">
-			<label for="metal">Metal Tone Ring of Your Choice</label><br>
+			<select name="toneRing" id="toneRingSelect">
+				<option value="RB00">Wooden Bead (like an RB-00)</option>
+				<option value="14F">1/4" Brass Hoop - Flathead Type</option>
+				<option value="14A">1/4" Brass Hoop - Archtop Type</option>
+				<option value="IFW">Integrated Flathead Woodie</option>
+				<option value="IAW">Integrated Archtop Woodie</option>
+				<option value="IAFW">Integrated Almost Flathead Woodie</option>
+				<option value="EZ">EZ-Swap Wooden Tone Ring</option>
+				<option value="metal">Metal Tone Ring of Your Choice</option>
+			</select>
 		</div>
 
-		<!-- EZ Swap Options-->
-		<div class="optionDiv" class="ezSwap">
+		<!-- EZ Swap Options -->
+		<div class="optionDiv ezSwap">
 			<h3>Which profile for your EZ-Swap Wooden Tone Ring?</h3>
-			<input type="radio" id="ezFlat" name="ezSwap">
-			<label for="ezFlat">Flathead</label><br>
-
-			<input type="radio" id="ezArch" name="ezSwap">
-			<label for="ezArch">Archtop</label><br>
-
-			<input type="radio" id="ezAF" name="ezSwap">
-			<label for="ezAF">Almost Flathead</label><br>
+			<select name="ezSwap" id="ezSwapSelect">
+				<option value="ezFlat">Flathead</option>
+				<option value="ezArch">Archtop</option>
+				<option value="ezAF">Almost Flathead</option>
+			</select>
 		</div>
 
-		<!-- EZ Swap Wood Options-->
-		<div class="optionDiv" class="ezSwap">
+		<!-- EZ Swap Wood Options -->
+		<div class="optionDiv ezSwap">
 			<h3>What type of wood for your EZ-Swap Wooden Tone Ring?</h3>
-			<input type="radio" id="ezhMpl" name="ezSwapWood">
-			<label for="ezhMpl">Hard Maple</label><br>
-
-			<input type="radio" id="eztHMpl" name="ezSwapWood">
-			<label for="eztHMpl">Torrefied Hard Maple</label><br>
-
-			<input type="radio" id="ezOsag" name="ezSwapWood">
-			<label for="ezOsag">Osage Orange</label><br>
+			<select name="ezSwapWood" id="ezSwapWoodSelect">
+				<option value="ezhMpl">Hard Maple</option>
+				<option value="eztHMpl">Torrefied Hard Maple</option>
+				<option value="ezOsag">Osage Orange</option>
+			</select>
 		</div>
 
-		<!-- Metal Ring Options-->
-		<div class="optionDiv" class="metalRing">
+		<!-- Metal Ring Options -->
+		<div class="optionDiv metalRing">
 			<label for="metalToneRing">Enter the brand and name of the metal tone ring you wish to use (ie. "Sullivan Vintage 35")</label><br>
 			<input type="text" id="metalRing" name="metalToneRing"><br>
 		</div>
 
-		<!-- Flange Options-->
+		<!-- Flange Options -->
 		<div class="optionDiv">
 			<h3>What style of pot assembly?</h3>
-			<input type="radio" id="brackShoes" name="potStyle">
-			<label for="brackShoes">Bracket Shoes</label><br>
-
-			<input type="radio" id="tube" name="potStyle">
-			<label for="tube">Tube</label><br>
+			<select name="potStyle" id="potStyleSelect">
+				<option value="brackShoes">Bracket Shoes</option>
+				<option value="tube">Tube</option>
+			</select>
 		</div>
 
-		<!-- Plating Options-->
+		<!-- Plating Options -->
 		<div class="optionDiv">
 			<h3>What type of plating on your metal hardware?</h3>
-			<input type="radio" id="nickel" name="plating">
-			<label for="nickel">Nickel Plating</label><br>
-
-			<input type="radio" id="chrome" name="plating">
-			<label for="chrome">Chrome Plating</label><br>
-
-			<input type="radio" id="gold" name="plating">
-			<label for="gold">Gold Plating</label><br>
-
-			<input type="radio" id="blackN" name="plating">
-			<label for="blackN">Black Powder Coat w/ Nickel Hooks and Nuts</label><br>
-
-			<input type="radio" id="blackG" name="plating">
-			<label for="blackG">Black Powder Coat w/ Gold Hooks and Nuts</label><br>
+			<select name="plating" id="platingSelect">
+				<option value="nickel">Nickel Plating</option>
+				<option value="chrome">Chrome Plating</option>
+				<option value="gold">Gold Plating</option>
+				<option value="blackN">Black Powder Coat w/ Nickel Hooks and Nuts</option>
+				<option value="blackG">Black Powder Coat w/ Gold Hooks and Nuts</option>
+			</select>
 		</div>
 
-		<!-- Tailpiece Options-->
+		<!-- Tailpiece Options -->
 		<div class="optionDiv">
 			<h3>What kind of tailpiece?</h3>
-			<input type="radio" id="noKnot" name="tailpiece">
-			<label for="tailpiece">No-Knot</label><br>
-	
-			<input type="radio" id="presto" name="tailpiece">
-			<label for="presto">Presto</label><br>
-
-			<input type="radio" id="kershner" name="tailpiece">
-			<label for="kershner">Kershner</label><br>
-
-			<input type="radio" id="two-hump" name="tailpiece">
-			<label for="two-hump">Two-Hump</label><br>
-
-			<input type="radio" id="clamshell" name="tailpiece">
-			<label for="clamshell">Clamshell</label><br>
+			<select name="tailpiece" id="tailpieceSelect">
+				<option value="noKnot">No-Knot</option>
+				<option value="presto">Presto</option>
+				<option value="kershner">Kershner</option>
+				<option value="two-hump">Two-Hump</option>
+				<option value="clamshell">Clamshell</option>
+			</select>
 		</div>
 
-		<!-- Neck Attachment Options-->
+		<!-- Neck Attachment Options -->
 		<div class="optionDiv">
 			<h3>What type of neck attachment hardware?</h3>
-			<input type="radio" id="singRod" name="neckAtt">
-			<label for="singRod">Single Coordinator Rod</label><br>
-
-			<input type="radio" id="dualRod" name="neckAtt">
-			<label for="dualRod">Dual Coordinator Rods</label><br>
-
-			<input type="radio" id="rudyRod" name="neckAtt">
-			<label for="rudyRod">Rudy Rod</label><br>
+			<select name="neckAtt" id="neckAttSelect">
+				<option value="singRod">Single Coordinator Rod</option>
+				<option value="dualRod">Dual Coordinator Rods</option>
+				<option value="rudyRod">Rudy Rod</option>
+			</select>
 		</div>
 	</form>
+
 
 </body>
 </html>
