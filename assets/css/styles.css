@@ -60,8 +60,11 @@ header {
 details {
   border: 1px solid #ccc;
   border-radius: 5px;
-  overflow: hidden;
   width: 100%; /* Ensures it takes the full width of the parent container */
+}
+
+#potAssy {
+	overflow: visible;
 }
 
 summary {
