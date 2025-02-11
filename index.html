@@ -48,7 +48,7 @@
 					</form>		
 			</details>
 			
-			<details id="potAssy">
+			<details id="potAssySelect">
 				<summary>Pot Assembly</summary>
 					<form id="resoPot">
 					<!-- Rim Wood -->
@@ -252,7 +252,7 @@
 				</form>
 			</details>
 			
-			<details id="neck">
+			<details id="neckSelect">
 				<summary>Neck and Fretboard</summary>
 					<form id="neck">
 						<!-- Neck Wood -->
@@ -352,10 +352,141 @@
 								<option value="bella">Bella Voce</option>
 							</select>
 						</div>
+						
+						<!-- Fretboard Binding Options -->
+						<div class="optionDiv">
+							<h3>What binding would you like to be around your fretboard?</h3>
+							<select name="fbBind" id="fbBindSelect">	
+								<option value="noFbBind">None</option>
+								<option value="whiteFbBind">White</option>
+								<option value="wbwFbBind">White/Black/White</option>
+								<option value="blackFbBind">Black</option>
+								<option value="ivorFbBind">Ivoroid</option>
+								<option value="ivwFbBind">Ivoroid/Black/White</option>
+								<option value="tortFbBind">Tortoise Shell/White/Black</option>
+								<option value="curlFbBind">Curly Maple/Black/White/Black</option>
+								<option value="pearlFbBind">White Pearloid</option>
+							</select>
+						</div>
+						
+						<!-- Name Block -->
+						<div class="optionDiv">
+							<h3>What would you like your name block to read?</h3>
+							<p><i>The location of the name block will either be the 15th, 21st, 22nd, or 24th fret, depending on the inlay pattern selected and the number of frets selected</i></p>
+							<input type="radio" id="defaultBlockID" name="nameBlock" value="75Custom">
+							<label for="75Custom">75 Custom (Default Value)</label><br>
+							<input type="radio" id="customBlockID" name="nameBlock" value="customName">
+							<label for="customName">Choose your own</label><br>
+							
+							<br>
+							
+							<label for="customBlockText">Custom Block Text (15 Characters or less): </label>
+							<input type="text" id="customBlockValue" name="customBlockText" maxLength="15">
+						</div>
+						
+						<!-- Frets -->
+						<div class="optionDiv">
+							<h3>What type of frets?</h3>
+							<select name="fretMat" id="fretMatSelect">	
+								<option value="nickelFret">Nickel-Silver</option>
+								<option value="steelFret">Stainless Steel</option>
+							</select>
+						</div>
+						
+						<!-- Heel Cap Material -->
+						<div class="optionDiv">
+							<h3>Which heel cap material do you prefer?</h3>
+							<select name="heelCapMat" id="heelCapMatSelect">	
+								<option value="noHeelCap">None</option>
+								<option value="rosewoodHeelCap">Rosewood</option>
+								<option value="ebonyHeelCap">Ebony</option>
+								<option value="curlyHeelCap">Curly Maple</option>
+								<option value="whiteHeelCap">White</option>
+								<option value="ivorHeelCap">Ivoroid</option>
+								<option value="pearlHeelCap">White Pearloid</option>
+								<option value="checkHeelCap" hidden>Checkerboard</option>
+								<option value="goldHeelCap" hidden>Gold Sparkle</option>
+							</select>
+						</div>
+						
+						<!-- Heel Cap Binding -->
+						<div class="optionDiv">
+							<h3>What kind of heel cap binding would you like?</h3>
+							<select name="heelCapBind" id="heelCapBindSelect">	
+								<option value="noHeelBind">None</option>
+								<option value="whiteHeelBind">White</option>
+								<option value="wbwHeelBind">White/Black/White</option>
+								<option value="blackHeelBind">Black</option>
+								<option value="ivorHeelBind">Ivoroid</option>
+								<option value="ivwHeelBind">Ivoroid/Black/White</option>
+								<option value="tortHeelBind">Tortoise Shell/White/Black</option>
+								<option value="curlHeelBind">Curly Maple/Black/White/Black</option>
+								<option value="pearlHeelBind">White Pearloid</option>
+							</select>
+						</div>
 					</form>
 			</details>
 			
-			
+			<details id="headstockSelect">
+				<summary>Headstock</summary>
+					<form id="headstock">
+						<!-- Headstock Overlay -->
+						<div class="optionDiv">
+							<h3>What type of wood for your headstock overlay?</h3>
+							<select name="hsOverlay" id="hsOverlaySelect">
+								<option value="rosewoodHS">Rosewood</option>
+								<option value="ebonyHS">Ebony</option>
+								<option value="yellowHS">Yellowheart</option>
+							</select>
+						</div>
+						
+						<!-- Headstock Shape -->
+						<div class="optionDiv">
+							<h3>Which headstock shape do you prefer?</h3>
+							<select name="hsShape" id="hsShapeSelect">
+								<option value="fiddle1HS">Fiddle Cut 1</option>
+								<option value="fiddle2HS">Fiddle Cut 2</option>
+								<option value="doubleHS">Double Cut</option>
+								<option value="kelHS">Kel Kroydon</option>
+								<option value="cokeHS">Coke Bottle</option>
+								<option value="style1HS">Style 1</option>
+								<option value="style00HS">Style 00</option>
+								<option value="paddleHS">Paddle</option>
+								<option value="flyHS">Flyswatter</option>
+							</select>
+						</div>
+						
+						<!-- Headstock Inlay Material -->
+						<div class="optionDiv">
+							<h3>What type of inlay material in your headstock?</h3>
+							<select name="hsInlayMat" id="hsInlayMatSelect">
+								<option value="hsWMop">White Mother of Pearl</option>
+								<option value="hsAbalone">Abalone</option>
+							</select>
+						</div>
+						
+						<!-- Headstock Inlay Pattern -->
+						<div class="optionDiv">
+							<h3>Which inlay pattern do you want in your headstock?</h3>
+							<select name="hsInlayPat" id="hsInlayPatSelect">
+								<option value="hsLogoOnly">Lemon Logo Only</option>
+								<option value="hsDiam">Diamonds and Squares</option>
+								<option value="hsSeagulls">Seagulls</option>
+								<option value="hsBowtie">Bowtie</option>
+								<option value="hsLeaves">Leaves and Bows</option>
+								<option value="hsHearts">Hearts and Flowers</option>
+								<option value="hsFloren">Florentine</option>
+								<option value="hsWreath">Wreath</option>
+								<option value="hsRB7">RB-7</option>
+								<option value="hsRB12">RB-12/18</option>
+								<option value="hsFleur">Fleur-de-lis</option>
+								<option value="hsFlying">Flying Eagles</option>
+								<option value="hsBlackJ">Blackjack</option>
+								<option value="hsBella">Bella Voce</option>
+							</select>
+						</div>
+					</form>
+			</details>
 		
 		</div>
 	
