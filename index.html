@@ -45,16 +45,6 @@
 							<option value="open12Banjo" disabled>12-inch Open Back Banjo (Oldtime)</option>
 						</select>
 					</div>
-										
-					<!-- Scale Length -->
-					<div class="optionDiv">
-						<h3>What scale length would you like?</h3>
-						<select name="scale" id="scaleSelect">
-							<option value="25-12" disabled>25 1/2"</option>
-							<option value="26-14" disabled>26 1/4" (Bowtie)</option>
-							<option value="26-38">26 3/8" (Prewar)</option>
-						</select>
-					</div>
 					</form>		
 			</details>
 			
@@ -275,6 +265,16 @@
 								<option value="curMpl">Curly Maple</option>
 							</select>
 						</div>
+											
+						<!-- Scale Length -->
+						<div class="optionDiv">
+							<h3>What scale length would you like?</h3>
+							<select name="scale" id="scaleSelect">
+								<option value="25-12" disabled>25 1/2"</option>
+								<option value="26-14" disabled>26 1/4" (Bowtie)</option>
+								<option value="26-38">26 3/8" (Prewar)</option>
+							</select>
+						</div>
 
 						<!-- Nut Width -->
 						<div class="optionDiv">
@@ -430,6 +430,22 @@
 			<details id="headstockSelect">
 				<summary>Headstock</summary>
 					<form id="headstock">
+						<!-- Headstock Shape -->
+						<div class="optionDiv">
+							<h3>Which headstock shape do you prefer?</h3>
+							<select name="hsShape" id="hsShapeSelect">
+								<option value="doubleHS">Double Cut</option>
+								<option value="fiddleHS1">Fiddle Cut 1</option>
+								<option value="fiddleHS2">Fiddle Cut 2</option>
+								<option value="kelHS">Kel Kroydon</option>
+								<option value="cokeHS">Coke Bottle</option>
+								<option value="style1HS">Style 1</option>
+								<option value="style00HS">Style 00</option>
+								<option value="paddleHS">Paddle</option>
+								<option value="flyHS">Flyswatter</option>
+							</select>
+						</div>
+						
 						<!-- Headstock Overlay -->
 						<div class="optionDiv">
 							<h3>What type of wood for your headstock overlay?</h3>
@@ -437,22 +453,6 @@
 								<option value="rosewoodHS">Rosewood</option>
 								<option value="ebonyHS">Ebony</option>
 								<option value="yellowHS">Yellowheart</option>
-							</select>
-						</div>
-						
-						<!-- Headstock Shape -->
-						<div class="optionDiv">
-							<h3>Which headstock shape do you prefer?</h3>
-							<select name="hsShape" id="hsShapeSelect">
-								<option value="fiddle1HS">Fiddle Cut 1</option>
-								<option value="fiddle2HS">Fiddle Cut 2</option>
-								<option value="doubleHS">Double Cut</option>
-								<option value="kelHS">Kel Kroydon</option>
-								<option value="cokeHS">Coke Bottle</option>
-								<option value="style1HS">Style 1</option>
-								<option value="style00HS">Style 00</option>
-								<option value="paddleHS">Paddle</option>
-								<option value="flyHS">Flyswatter</option>
 							</select>
 						</div>
 						
@@ -573,11 +573,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const handSelect = document.getElementById('RightLeftSelect');
   const typeSelect = document.getElementById('banjoTypeSelect');
   const scaleSelect = document.getElementById('scaleSelect');
+  const headstockSelect = document.getElementById('hsShapeSelect');
 
   // Add event listeners to just these two elements
   handSelect.addEventListener('change', updateModel);
   typeSelect.addEventListener('change', updateModel);
   scaleSelect.addEventListener('change', updateModel);
+  headstockSelect.addEventListener('change', updateModel);
 
   // Initialize model on page load
   updateModel();
@@ -589,9 +591,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const hand = handSelect.value;
     const type = typeSelect.value;
 	const scale = scaleSelect.value;
+	const headstock = headstockSelect.value;
 
     // Construct path
-    const src = `assets/3DModels/${hand}/${type}/${scale}.glb`;
+    const src = `assets/3DModels/${hand}/${type}/${scale}/${headstock}.glb`;
     console.log('New source:', src); // Debugging line
 
     // Update viewer
