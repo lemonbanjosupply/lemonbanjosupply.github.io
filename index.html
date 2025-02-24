@@ -6,6 +6,10 @@
 		<link rel="stylesheet" href="assets/css/styles.css">
 		<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
 		<script src="assets/js/modelFile.js"></script> <!--Uses the form data to select which model file to use-->
+		<script src="assets/js/banjoType.js"></script> <!--Shows or hides different forms depending on banjo type-->
+		<script src="assets/js/toneRingVisibility.js"></script>
+		<script src="assets/js/autoCloseDetails.js"></script>
+
 	</head>
 	
 <body>
@@ -32,7 +36,7 @@
 						<h3>Will your banjo be left-handed or right-handed?</h3>
 						<select name="RightLeft" id="RightLeftSelect">
 							<option value="rightHandBanjo">Right-handed</option>
-							<option value="leftHandBanjo" >Left-handed</option>
+							<option value="leftHandBanjo">Left-handed</option>
 						</select>
 					</div>
 
@@ -41,8 +45,8 @@
 						<h3>What type of banjo are you interested in?</h3>
 						<select name="banjoType" id="banjoTypeSelect">
 							<option value="resoBanjo">Resonator Banjo (Bluegrass)</option>
-							<option value="open11Banjo" disabled>11-inch Open Back Banjo (Oldtime)</option>
-							<option value="open12Banjo" disabled>12-inch Open Back Banjo (Oldtime)</option>
+							<option value="open11Banjo">11-inch Open Back Banjo (Oldtime)</option>
+							<option value="open12Banjo">12-inch Open Back Banjo (Oldtime)</option>
 						</select>
 					</div>
 					</form>		
@@ -77,8 +81,8 @@
 							<option value="IFW">Integrated Flathead Woodie</option>
 							<option value="IAW">Integrated Archtop Woodie</option>
 							<option value="IAFW">Integrated Almost Flathead Woodie</option>
-							<option value="EZ" disabled>EZ-Swap Wooden Tone Ring</option>
-							<option value="metal" disabled>Metal Tone Ring of Your Choice</option>
+							<option value="EZ">EZ-Swap Wooden Tone Ring</option>
+							<option value="metal">Metal Tone Ring of Your Choice</option>
 						</select>
 					</div>
 
