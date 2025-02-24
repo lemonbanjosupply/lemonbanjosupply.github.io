@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>75 Custom Designer - Lemon Banjo and Supply</title>
-		<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
 		<link rel="stylesheet" href="assets/css/styles.css">
-		
-
+		<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
+		<script src="assets/js/modelFile.js"></script> <!--Uses the form data to select which model file to use-->
 	</head>
+	
 <body>
 	<header>
 		<h1>Lemon Banjo and Supply</h1>
@@ -20,7 +20,7 @@
 			<a href="#">Blog</a>
 		</nav>
 	</header>
-	
+
 	<div class="container">
 		<div class="box" id="option_selector">
 			<h2>Option Selector</h2>
@@ -566,42 +566,4 @@
 		</div>
 	</div>
 </body>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Only target the two relevant dropdowns
-  const handSelect = document.getElementById('RightLeftSelect');
-  const typeSelect = document.getElementById('banjoTypeSelect');
-  const scaleSelect = document.getElementById('scaleSelect');
-  const headstockSelect = document.getElementById('hsShapeSelect');
-
-  // Add event listeners to just these two elements
-  handSelect.addEventListener('change', updateModel);
-  typeSelect.addEventListener('change', updateModel);
-  scaleSelect.addEventListener('change', updateModel);
-  headstockSelect.addEventListener('change', updateModel);
-
-  // Initialize model on page load
-  updateModel();
-
-  function updateModel() {
-    console.log('Updating model...'); // Debugging line
-    
-    // Get current values
-    const hand = handSelect.value;
-    const type = typeSelect.value;
-	const scale = scaleSelect.value;
-	const headstock = headstockSelect.value;
-
-    // Construct path
-    const src = `assets/3DModels/${hand}/${type}/${scale}/${headstock}.glb`;
-    console.log('New source:', src); // Debugging line
-
-    // Update viewer
-    const viewer = document.getElementById('viewer');
-    viewer.setAttribute('src', src);
-  }
-});
-</script>
-
 </html>
