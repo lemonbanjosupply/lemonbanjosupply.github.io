@@ -31,18 +31,28 @@
 					<div class="optionDiv">
 						<h3>Will your banjo be left-handed or right-handed?</h3>
 						<select name="RightLeft" id="RightLeftSelect">
-							<option value="right">Right-handed</option>
-							<option value="left" disabled>Left-handed</option>
+							<option value="rightHandBanjo">Right-handed</option>
+							<option value="leftHandBanjo" >Left-handed</option>
 						</select>
 					</div>
-					
+
 					<!-- Banjo Type -->
 					<div class="optionDiv"> 
 						<h3>What type of banjo are you interested in?</h3>
 						<select name="banjoType" id="banjoTypeSelect">
 							<option value="resoBanjo">Resonator Banjo (Bluegrass)</option>
-							<option value="open11" disabled>11-inch Open Back Banjo (Oldtime)</option>
-							<option value="open12" disabled>12-inch Open Back Banjo (Oldtime)</option>
+							<option value="open11Banjo" disabled>11-inch Open Back Banjo (Oldtime)</option>
+							<option value="open12Banjo" disabled>12-inch Open Back Banjo (Oldtime)</option>
+						</select>
+					</div>
+										
+					<!-- Scale Length -->
+					<div class="optionDiv">
+						<h3>What scale length would you like?</h3>
+						<select name="scale" id="scaleSelect">
+							<option value="25-12" disabled>25 1/2"</option>
+							<option value="26-14" disabled>26 1/4" (Bowtie)</option>
+							<option value="26-38">26 3/8" (Prewar)</option>
 						</select>
 					</div>
 					</form>		
@@ -263,16 +273,6 @@
 								<option value="mahog">Mahogany</option>
 								<option value="walnut">Walnut</option>
 								<option value="curMpl">Curly Maple</option>
-							</select>
-						</div>
-
-						<!-- Scale Length -->
-						<div class="optionDiv">
-							<h3>What scale length would you like?</h3>
-							<select name="scale" id="scaleSelect">
-								<option value="25-1/2sc" disabled>25 1/2"</option>
-								<option value="26-1/4sc" disabled>26 1/4" (Bowtie)</option>
-								<option value="26-3/8sc">26 3/8" (Prewar)</option>
 							</select>
 						</div>
 
@@ -551,7 +551,7 @@
 		<div class="box" id="model_display">
 			<model-viewer
 				id="viewer"
-				src="assets/3DModels/rightHandBanjo/resoBanjo/test7.glb"
+				src="../"
 				alt="3D model"
 				auto-rotate
 				auto-rotate-delay="2000"
@@ -566,5 +566,39 @@
 		</div>
 	</div>
 </body>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Only target the two relevant dropdowns
+  const handSelect = document.getElementById('RightLeftSelect');
+  const typeSelect = document.getElementById('banjoTypeSelect');
+  const scaleSelect = document.getElementById('scaleSelect');
+
+  // Add event listeners to just these two elements
+  handSelect.addEventListener('change', updateModel);
+  typeSelect.addEventListener('change', updateModel);
+  scaleSelect.addEventListener('change', updateModel);
+
+  // Initialize model on page load
+  updateModel();
+
+  function updateModel() {
+    console.log('Updating model...'); // Debugging line
+    
+    // Get current values
+    const hand = handSelect.value;
+    const type = typeSelect.value;
+	const scale = scaleSelect.value;
+
+    // Construct path
+    const src = `assets/3DModels/${hand}/${type}/${scale}.glb`;
+    console.log('New source:', src); // Debugging line
+
+    // Update viewer
+    const viewer = document.getElementById('viewer');
+    viewer.setAttribute('src', src);
+  }
+});
+</script>
 
 </html>
