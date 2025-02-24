@@ -27,6 +27,15 @@
 			<details id="banjoSizeSelect" open>
 				<summary>Banjo Type</summary>
 					<form id="banjoType">
+					<!-- Right or Left Hand -->
+					<div class="optionDiv">
+						<h3>Will your banjo be left-handed or right-handed?</h3>
+						<select name="RightLeft" id="RightLeftSelect">
+							<option value="right">Right-handed</option>
+							<option value="left" disabled>Left-handed</option>
+						</select>
+					</div>
+					
 					<!-- Banjo Type -->
 					<div class="optionDiv"> 
 						<h3>What type of banjo are you interested in?</h3>
@@ -34,15 +43,6 @@
 							<option value="resoBanjo">Resonator Banjo (Bluegrass)</option>
 							<option value="open11" disabled>11-inch Open Back Banjo (Oldtime)</option>
 							<option value="open12" disabled>12-inch Open Back Banjo (Oldtime)</option>
-						</select>
-					</div>
-	
-					<!-- Right or Left Hand -->
-					<div class="optionDiv">
-						<h3>Will your banjo be left-handed or right-handed?</h3>
-						<select name="RightLeft" id="RightLeftSelect">
-							<option value="right">Right-handed</option>
-							<option value="left" disabled>Left-handed</option>
 						</select>
 					</div>
 					</form>		
@@ -549,8 +549,9 @@
 		</div>
 	
 		<div class="box" id="model_display">
-			<model-viewer 
-				src="assets/3DModels/test7.glb"
+			<model-viewer
+				id="viewer"
+				src="assets/3DModels/rightHandBanjo/resoBanjo/test7.glb"
 				alt="3D model"
 				auto-rotate
 				auto-rotate-delay="2000"
@@ -565,4 +566,5 @@
 		</div>
 	</div>
 </body>
+
 </html>
