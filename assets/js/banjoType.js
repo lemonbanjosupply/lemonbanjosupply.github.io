@@ -6,17 +6,16 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateFormVisibility() {
         const selectedValue = banjoTypeSelect.value;
 
+        resoPotForm.classList.add("hidden");
+        openPotForm.classList.add("hidden");
+
         if (selectedValue === "resoBanjo") {
-            resoPotForm.style.display = "block";
-            openPotForm.style.display = "none";
+            resoPotForm.classList.remove("hidden");
         } else if (selectedValue === "open11Banjo" || selectedValue === "open12Banjo") {
-            resoPotForm.style.display = "none";
-            openPotForm.style.display = "block";
+            openPotForm.classList.remove("hidden");
         }
     }
 
     banjoTypeSelect.addEventListener("change", updateFormVisibility);
-
-    // Initial check in case the page loads with a preselected value
     updateFormVisibility();
 });

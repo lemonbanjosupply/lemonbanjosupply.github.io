@@ -4,11 +4,7 @@
 		<meta charset="UTF-8">
 		<title>75 Custom Designer - Lemon Banjo and Supply</title>
 		<link rel="stylesheet" href="assets/css/styles.css">
-		<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
-		<script src="assets/js/modelFile.js"></script> <!--Uses the form data to select which model file to use-->
-		<script src="assets/js/banjoType.js"></script> <!--Shows or hides different forms depending on banjo type-->
-		<script src="assets/js/toneRingVisibility.js"></script>
-		<script src="assets/js/autoCloseDetails.js"></script>
+		
 
 	</head>
 	
@@ -45,7 +41,7 @@
 						<h3>What type of banjo are you interested in?</h3>
 						<select name="banjoType" id="banjoTypeSelect">
 							<option value="resoBanjo">Resonator Banjo (Bluegrass)</option>
-							<option value="open11Banjo" disabled>11-inch Open Back Banjo (Oldtime)</option>
+							<option value="open11Banjo" >11-inch Open Back Banjo (Oldtime)</option>
 							<option value="open12Banjo" disabled>12-inch Open Back Banjo (Oldtime)</option>
 						</select>
 					</div>
@@ -84,6 +80,8 @@
 							<option value="EZ">EZ-Swap Wooden Tone Ring</option>
 							<option value="metal">Metal Tone Ring of Your Choice</option>
 						</select>
+						
+						
 					</div>
 
 					<!-- EZ Swap Options -->
@@ -111,12 +109,13 @@
 						<input type="text" id="metalRing" name="metalToneRing"><br>
 					</div>
 
-					<!-- Flange Options -->
+					<!-- Hardware Style Options -->
 					<div class="optionDiv">
-						<h3>*What type of flange?</h3>
-						<select name="flange" id="flangeSelect">
-							<option value="1PF">One Piece Flange</option>
-							<option value="2PF">Two Piece Flange</option>
+						<h3>What style of hardware?</h3>
+						<select name="hardware" id="hardwareSelect">
+							<option value="1PF">One Piece Flange, Standard</option>
+							<option value="2PF">Two Piece Flange, Standard</option>
+							<option value="topT">One Piece Flange, Top Tension</option>
 						</select>
 					</div>
 
@@ -127,17 +126,6 @@
 							<option value="nickel">Nickel Plating</option>
 							<option value="chrome">Chrome Plating</option>
 							<option value="gold">Gold Plating</option>
-							<option value="blackN" disabled>Black Powder Coat w/ Nickel Hooks and Nuts</option>
-							<option value="blackG" disabled>Black Powder Coat w/ Gold Hooks and Nuts</option>
-						</select>
-					</div>
-
-					<!-- Top Tension -->
-					<div class="optionDiv">
-						<h3>*Would you like your hardware to be Top Tension style?</h3>
-						<select name="topT" id="topTSelect">
-							<option value="noTT">No</option>
-							<option value="yesTT">Yes</option>
 						</select>
 					</div>
 
@@ -438,8 +426,10 @@
 						<div class="optionDiv">
 							<h3>Which headstock shape do you prefer?</h3>
 							<select name="hsShape" id="hsShapeSelect">
+							
+							<option value="fiddleHS1">Fiddle Cut 1</option>
 								<option value="doubleHS">Double Cut</option>
-								<option value="fiddleHS1">Fiddle Cut 1</option>
+								
 								<option value="fiddleHS2">Fiddle Cut 2</option>
 								<option value="kelHS">Kel Kroydon</option>
 								<option value="cokeHS">Coke Bottle</option>
@@ -555,11 +545,11 @@
 		<div class="box" id="model_display">
 			<model-viewer
 				id="viewer"
-				src="../"
+				src=""
 				alt="3D model"
 				auto-rotate
-				auto-rotate-delay="2000"
-				rotation-per-second="30deg"
+				auto-rotate-delay="1000"
+				rotation-per-second="1deg"
 				camera-controls>
 			</model-viewer>
 			<h3>3D Viewer Controls</h3>
@@ -569,5 +559,13 @@
 				</p>
 		</div>
 	</div>
+	
+	<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
+	<script src="assets/js/modelFile.js"></script> <!--Uses the form data to select which model file to use-->
+	<script src="assets/js/banjoType.js"></script> <!--Shows or hides different forms depending on banjo type-->
+	<script src="assets/js/toneRingVisibility.js"></script> <!--Shows or hides different forms options depending on tone ring selection-->
+	<script src="assets/js/autoCloseDetails.js"></script><!--Controls the details panes-->
+	<script src="assets/js/archOrFlat.js"></script> <!--Controls visibility of arch or flat head-->
+	<script src="assets/js/resoHdw.js"></script> <!--Controls visibility and color of resonator banjo hardware -->
 </body>
 </html>
