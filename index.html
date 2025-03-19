@@ -426,8 +426,10 @@
 						<div class="optionDiv">
 							<h3>Which headstock shape do you prefer?</h3>
 							<select name="hsShape" id="hsShapeSelect">
-								<option value="doubleCutHS">Double Cut</option>
 								<option value="fiddleCutHS1">Fiddle Cut 1</option>
+								
+								<option value="doubleCutHS">Double Cut</option>
+								
 								<option value="fiddleCutHS2">Fiddle Cut 2</option>
 								<option value="kelHS" disabled>Kel Kroydon</option>
 								<option value="cokeHS" disabled>Coke Bottle</option>
@@ -538,6 +540,17 @@
 					<form id="headstock">
 					</form>
 			</details>
+			
+			<details id="finishSelect">
+				<summary>Finish</summary>
+					<form id="finish">
+					<h4>Neck Finish</h4>
+						<select name="neckFinish" id="neckFinishSelect">
+								<option value="neckNatural">Natural</option>
+								<option value="neckBurst1">Tobacco Burst</option>
+							</select>
+					</form>
+			</details>
 		</div>
 	
 		<div class="box" id="model_display">
@@ -552,7 +565,8 @@
 				skybox-image="assets/images/pretoria_gardens_4k.jpg"
 				skybox-height="20m"
 				shadow-intensity="1"
-				shadow-light="5 30 -10">
+				shadow-light="5 30 -10"
+				ar>
 			</model-viewer>
 			
 			
@@ -573,5 +587,6 @@
 	<script src="assets/js/archOrFlat.js"></script> <!--Controls visibility of arch or flat head-->
 	<script src="assets/js/resoHdw.js"></script> <!--Controls visibility and color of resonator banjo hardware -->
 	<script src="assets/js/tailpiece.js"></script> <!--Controls visibility and color of tailpiece -->
+	<script src="assets/js/neckFinish.js"></script>
 </body>
 </html>
