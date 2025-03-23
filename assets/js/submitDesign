@@ -1,0 +1,82 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const formElements = document.querySelectorAll("select, input, textarea");
+
+    function generateLink() {
+        const params = new URLSearchParams();
+
+        formElements.forEach(el => {
+            if ((el.type === "radio" || el.type === "checkbox") && !el.checked) return;
+            params.append(el.id || el.name, el.value);
+        });
+
+        const url = window.location.origin + window.location.pathname + "?" + params.toString();
+        
+        // Prompt for user's name and email
+        const userName = prompt("Please enter your name:");
+        const userEmail = prompt("Please enter your email:");
+
+        if (userName && userEmail) {
+            // Initialize EmailJS
+            emailjs.init('usoRnw5-DmZysNLeO'); 
+
+            // Prepare email data for the user
+            const emailParamsUser = {
+                to_name: userName,
+                to_email: userEmail,  
+                message: `${url}`
+            };
+
+            // Prepare email data for the admin (Email is handled in the EmailJS template)
+            const emailParamsAdmin = {
+                to_name: userName,
+                user_email: userEmail,  
+                message: `${url}`
+            };
+
+            // Send email to the user
+            emailjs.send('service_vepchmn', 'template_dfl9m9l', emailParamsUser)
+                .then(function() {
+                    alert(`Link has been sent to ${userEmail}.`);
+
+                    // Now send email to admin
+                    return emailjs.send('service_vepchmn', 'template_oao78lt', emailParamsAdmin);
+                })
+                .then(function() {
+                    console.log("Admin email sent successfully.");
+                })
+                .catch(function(error) {
+                    console.error("Email send failed:", error);
+                    alert("Failed to send email: " + (error.text || error.message || "Unknown error"));
+                });
+
+        } else {
+            alert("Name and email are required to send the link.");
+        }
+    }
+
+    function populateForm() {
+        const params = new URLSearchParams(window.location.search);
+
+        params.forEach((value, key) => {
+            let elements = document.querySelectorAll(`[id="${key}"], [name="${key}"]`);
+            
+            elements.forEach(el => {
+                if (el.type === "radio" || el.type === "checkbox") {
+                    el.checked = el.value === value;
+                } else {
+                    el.value = value;
+                }
+            });
+        });
+
+        // **Trigger the model update after populating form**
+        const headstockSelect = document.getElementById("hsShapeSelect");
+        if (headstockSelect) {
+            headstockSelect.dispatchEvent(new Event("change"));
+        }
+    }
+
+    populateForm();
+
+    document.getElementById("generateLinkButton").addEventListener("click", generateLink);
+});
