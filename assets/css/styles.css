@@ -89,7 +89,7 @@ summary:hover {
 
 @media screen and (min-device-width: 320px) and (max-device-width: 600px) {
     .container {
-        font-size: 150%; /* 50% increase */
+        font-size: 75%; 
 				width: 95vw;  /* 95% of the viewport width */
     }
 }
