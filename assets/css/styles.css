@@ -1,6 +1,8 @@
 @media screen and (min-device-width: 320px) and (max-device-width: 600px) {
     body {
-        font-size: 2em; /* 100% increase */
+        font-size: 1.5em; /* 50% increase */
+								width: 98vw;  /* 98% of the viewport width */
+        margin: 0 auto; /* Centers content if needed */
     }
 }
 
