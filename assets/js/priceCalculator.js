@@ -1,55 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let modifiers = {};  // Store { Value: Modifier } mappings
-    let basePrice = 2500;  // Starting price
-    let totalPrice = basePrice;  // Running total
-    let previousSelections = {};  // Track previous selections
+    let modifiers = {};
+    let basePrice = 2500;
+    let totalPrice = basePrice;
+    let previousSelections = {};
 
-    // Load the Excel file from the correct directory
-    fetch("/lemonbanjosupply.github.io/assets/prices/modifiers.xlsx")
+    fetch("https://docs.google.com/spreadsheets/d/1wZREimSc_8vXy7RBgFli5wXNGJMpEakw/export?format=xlsx")
         .then(response => response.blob())
         .then(blob => blob.arrayBuffer())
         .then(data => {
             const workbook = XLSX.read(data, { type: "array" });
-            const sheetName = workbook.SheetNames[0];
-            const sheet = workbook.Sheets[sheetName];
+            const sheet = workbook.Sheets[workbook.SheetNames[0]];
             const jsonData = XLSX.utils.sheet_to_json(sheet);
 
-            // Convert Excel data into a { Value: Modifier } object
             jsonData.forEach(row => {
                 modifiers[row.Value] = parseFloat(row.Modifier) || 0;
             });
 
             console.log("Loaded Modifiers:", modifiers);
+
+            // Apply initial selections after modifiers are loaded
+            initializeTotalPrice();
         })
         .catch(error => console.error("Error loading Excel file:", error));
 
-    // Function to update the total price
     function updateTotalPrice(selectElement) {
         const selectedValue = selectElement.value;
         const inputName = selectElement.name;
 
-        // Remove previous selection's modifier
         if (previousSelections[inputName]) {
             totalPrice -= modifiers[previousSelections[inputName]] || 0;
         }
-
-        // Add new selection's modifier
         if (selectedValue) {
             totalPrice += modifiers[selectedValue] || 0;
         }
 
-        // Store the new selection
         previousSelections[inputName] = selectedValue;
-
-        // Update the displayed price
         document.getElementById("totalPrice").textContent = totalPrice.toFixed(2);
     }
 
-    // Attach event listeners to all <select> elements
+    function initializeTotalPrice() {
+        totalPrice = basePrice;
+        document.querySelectorAll("select").forEach(select => {
+            const selectedValue = select.value;
+            if (selectedValue) {
+                totalPrice += modifiers[selectedValue] || 0;
+                previousSelections[select.name] = selectedValue;
+            }
+        });
+        document.getElementById("totalPrice").textContent = totalPrice.toFixed(2);
+    }
+
     document.querySelectorAll("select").forEach(select => {
         select.addEventListener("change", () => updateTotalPrice(select));
     });
 
-    // Ensure the displayed price starts at $2500
     document.getElementById("totalPrice").textContent = totalPrice.toFixed(2);
 });
