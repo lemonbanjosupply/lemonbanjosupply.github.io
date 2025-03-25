@@ -1,9 +1,4 @@
-@media screen and (min-device-width: 320px) and (max-device-width: 600px) {
-    .container {
-        font-size: 1rem; /* 50% increase */
-				width: 95vw;  /* 95% of the viewport width */
-    }
-}
+
 
 * {
 	margin: 0;
@@ -90,4 +85,11 @@ summary {
 
 summary:hover {
   background-color: #f0f0f0; /* Light gray on hover */
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 600px) {
+    .container {
+        font-size: 150%; /* 50% increase */
+				width: 95vw;  /* 95% of the viewport width */
+    }
 }
