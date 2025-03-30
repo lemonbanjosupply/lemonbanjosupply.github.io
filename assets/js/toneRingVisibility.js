@@ -1,42 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const banjoTypeSelect = document.getElementById("banjoTypeSelect");
-    const toneRingSelects = document.querySelectorAll("#resoToneRingSelect, #openToneRingSelect");
+    const toneRingSelect = document.getElementById("toneRingSelect");
+    const ezSwapOptions = document.querySelectorAll(".optionDiv.ezSwap");
+    const metalRingOption = document.querySelector(".optionDiv.metalRing");
 
-    function updateToneRingVisibility(event) {
-        const select = event.target;
-        const form = select.closest('form');
-        const ezSwapDivs = form.querySelectorAll('.ezSwap');
-        const metalRingDivs = form.querySelectorAll('.metalRing');
-
-        // Reset all in current form first
-        ezSwapDivs.forEach(div => div.classList.add('hidden'));
-        metalRingDivs.forEach(div => div.classList.add('hidden'));
-
-        // Show relevant sections
-        if (select.value === "EZ") {
-            ezSwapDivs.forEach(div => div.classList.remove('hidden'));
-        } else if (select.value === "metal") {
-            metalRingDivs.forEach(div => div.classList.remove('hidden'));
-        }
+    if (!toneRingSelect) {
+        return;
     }
 
-    function resetToneRingSelection() {
-        toneRingSelects.forEach(select => {
-            select.selectedIndex = 0;
-            const form = select.closest('form');
-            form.querySelectorAll('.ezSwap, .metalRing').forEach(div => {
-                div.classList.add('hidden');
-            });
+    toneRingSelect.addEventListener("change", function () {
+        const selectedValue = toneRingSelect.value;
+
+        // Hide all options initially
+        ezSwapOptions.forEach(div => {
+            div.style.display = "none";
         });
-    }
+        
+        metalRingOption.style.display = "none";
 
-    toneRingSelects.forEach(select => {
-        select.addEventListener("change", updateToneRingVisibility);
-        // Initialize visibility for each form
-        updateToneRingVisibility({ target: select });
+        // Show the relevant option based on selection
+        if (selectedValue === "EZ") {
+            ezSwapOptions.forEach(div => {
+                div.style.display = "block";
+            });
+        } else if (selectedValue === "metal") {
+            metalRingOption.style.display = "block";
+        }
     });
-
-    if (banjoTypeSelect) {
-        banjoTypeSelect.addEventListener("change", resetToneRingSelection);
-    }
 });

@@ -31,7 +31,27 @@
 			it simply means that these options are not yet available in this 3D designer.
 			These options will be coming soon. In the meantime, call me if what you 
 			want is not in the options below.</i></h3>
-			<details id="banjoSizeSelect" open>
+			
+			<details id="banjoPresetSelect" open>
+				<summary>Banjo Presets</summary>
+					<h3>The buttons below will allow you to preload a standard Lemon model into the customizer.</h3>
+					<h4>1935 Series</h4>
+						<button id="banjol3_00">L3-00</button>
+						<button id="banjol3_1">L3-1</button>
+						<button id="banjol3_3">L3-3</button>
+						<button id="banjol3_4">L3-4</button>
+						<button id="banjol3_G">L3-G</button>
+					<h4>1954 Series</h4>
+						<button id="banjol5_100">L5-100</button>
+						<button id="banjol5_150">L5-150</button>
+						<button id="banjol5_250">L5-250</button>
+						<button id="banjol5_500">L5-500</button>
+			</details>
+			
+			
+			
+			
+			<details id="banjoSizeSelect">
 				<summary>Banjo Type</summary>
 					<form id="banjoType">
 					<!-- Right or Left Hand -->
@@ -84,7 +104,7 @@
 							<option value="IFW">Integrated Flathead Woodie</option>
 							<option value="IAW">Integrated Archtop Woodie</option>
 							<option value="IAFW">Integrated Almost Flathead Woodie</option>
-							<option value="EZ" hidden>EZ-Swap Wooden Tone Ring</option>
+							<option value="EZ">EZ-Swap Wooden Tone Ring</option>
 							<option value="metal">Metal Tone Ring of Your Choice</option>
 						</select>
 						
@@ -337,7 +357,7 @@
 								<option value="kelHS" disabled>Kel Kroydon</option>
 								<option value="cokeHS" disabled>Coke Bottle</option>
 								<option value="style1HS" disabled>Style 1</option>
-								<option value="style00HS" disabled>Style 00</option>
+								<option value="style00HS">Style 00</option>
 								<option value="paddleHS">Paddle</option>
 								<option value="flyHS">Flyswatter</option>
 							</select>
@@ -397,6 +417,7 @@
 								<option value="hsBindIBW">Ivoroid/Black/White</option>
 								<option value="hsBindIBWDbl">Ivoroid/Black/White Double</option>
 								<option value="hsBindTort">Tortoise Shell/Black/White</option>
+								<option value="hsBindCurly">Curly Maple/Black/White/Black</option>
 								<option value="hsBindPearl">White Pearloid</option>
 							</select>
 						</div>
@@ -440,19 +461,117 @@
 		
 			<details id="resonatorSelect">
 				<summary>Resonator</summary>
-					<form id="headstock">
+					<form id="resonator">
+						<!-- Resonator Type -->
+						<div class="optionDiv">
+							<h3>What type of resonator do you want?</h3>
+							<select name="resoType" id="resoTypeSelect">
+								<option value="standardReso">Standard Resonator</option>
+								<option value="TTReso">Top-Tension Style Resonator</option>
+							</select>
+						</div>
+						
+						<!-- Resonator Wood -->
+						<div class="optionDiv">
+							<h3>What wood do you want your resonator to be?</h3>
+							<select name="resoWood" id="resoWoodSelect">
+								<option value="resoStraigtMpl">Straight Maple</option>
+								<option value="resoCurMpl">Curly Maple</option>
+								<option value="resoMahog">Mahogany</option>
+								<option value="resoWalnut">Walnut</option>
+								<option value="resoBurlWalnut">Burled Walnut (Standard Resonator Only)</option>
+								<option value="resoQuiltMpl">Quilted Maple (Standard Resonator Only)</option>
+							</select>
+						</div>
+						
+						<!-- Resonator Binding Location -->
+						<div class="optionDiv">
+							<h3>Where would you like your resonator to have binding?</h3>
+							<select name="resoBindingLoc" id="resoBindingLocSelect">
+								<option value="resoBindBottom">Bottom Only</option>
+								<option value="resoBindTopBot">Top and Bottom</option>
+							</select>
+						</div>
+						
+						<!-- Resonator Binding Type -->
+						<div class="optionDiv">
+							<h3>What type of binding would you like on your resonator?</h3>
+							<select name="resoBind" id="resoBindSelect">
+								<option value="resoBindWhite">White</option>
+								<option value="resoBindWBW">White/Black/White</option>
+								<option value="resoBindWBWDbl">White/Black/White Double</option>
+								<option value="resoBindBlack">Black</option>
+								<option value="resoBindIvor">Ivoroid</option>
+								<option value="resoBindIBW">Ivoroid/Black/White</option>
+								<option value="resoBindIBWDbl">Ivoroid/Black/White Double</option>
+								<option value="resoBindTort">Tortoise Shell/Black/White</option>
+								<option value="resoBindCurly">Curly Maple/Black/White/Black</option>
+								<option value="resoBindPearl">White Pearloid</option>
+							</select>
+						</div>
+						
+						<!-- Resonator Concentric Rings -->
+						<div class="optionDiv">
+							<h3>What kind of concentric rings in your resonator?</h3>
+							<select name="concenRings" id="ConcenRingsSelect">
+								<option value="noConcenRings">None</option>
+								<option value="concenWBW">White/Black/White</option>
+								<option value="concenSty4">Style 4</option>
+							</select>
+						</div>
 					</form>
 			</details>
 			
 			<details id="finishSelect">
 				<summary>Finish</summary>
 					<form id="finish">
-					<h4>Neck Finish</h4>
-						<select name="neckFinish" id="neckFinishSelect">
+						<!-- Neck finish options -->
+						<div class="optionDiv">
+							<h3>Neck Finish</h3>
+							<select name="neckFinish" id="neckFinishSelect">
 								<option value="neckNatural">Natural</option>
+								<option value="neckGoldenBrown">Golden Brown</option>
 								<option value="neckVintageMahog">Vintage Mahogany</option>
+								<option value="neckTobaccoBrown">Tobacco Brown</option>
+								<option value="neckBurstCherry">Cherry Burst</option>
 								<option value="neckBurstTobacco">Tobacco Burst</option>
+								<option value="neckBurstDark">Dark Burst</option>
 							</select>
+						</div>
+						
+						<!-- Resonator finish options -->
+						<div class="optionDiv">
+							<h3>Resonator Finish</h3>
+							<select name="resoFinish" id="resoFinishSelect">
+								<option value="resoNatural">Natural</option>
+								<option value="resoGoldenBrown">Golden Brown</option>
+								<option value="resoVintageMahog">Vintage Mahogany</option>
+								<option value="resoTobaccoBrown">Tobacco Brown</option>
+								<option value="resoBurstCherry">Cherry Burst</option>
+								<option value="resoBurstTobacco">Tobacco Burst</option>
+								<option value="resoBurstDark">Dark Burst</option>
+							</select>
+						</div>
+						
+						<!-- Aged Binding -->
+						<div class="optionDiv">
+							<h3>Would you like your binding to be aged?</h3>
+							<select name="bindingAge" id="bindingAgeSelect">
+								<option value="bindAgeNone">No Aging</option>
+								<option value="bindAgeLight">Light Aging</option>
+								<option value="bindAgeHeavy">Heavy Aging</option>
+							</select>
+						</div>
+						
+						<!-- Aged HS Inlays -->
+						<div class="optionDiv">
+							<h3>Would you like your headstock inlays to be aged?</h3>
+							<select name="hsAge" id="hsAgeSelect">
+								<option value="hsAgeNone">No Aging</option>
+								<option value="hsAgeLight">Light Aging</option>
+								<option value="hsAgeHeavy">Heavy Aging</option>
+							</select>
+						</div>
 					</form>
 			</details>
 			<button id="generateLinkButton">Submit Design for Review</button>
@@ -521,6 +640,7 @@
 	<script src="assets/js/tailpiece.js"></script> <!--Controls visibility and color of tailpiece -->
 	<script src="assets/js/neckFinish.js"></script>
 	<script src="assets/js/priceCalculator.js"></script>
+	<script src="assets/js/banjoPresets.js"></script>
 	
 	
 </body>

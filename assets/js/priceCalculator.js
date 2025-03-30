@@ -16,8 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 modifiers[row.Value] = parseFloat(row.Modifier) || 0;
             });
 
-            console.log("Loaded Modifiers:", modifiers);
-
             // Apply initial selections after modifiers are loaded
             initializeTotalPrice();
         })
