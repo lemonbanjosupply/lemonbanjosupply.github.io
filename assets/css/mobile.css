@@ -1,0 +1,93 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+    height: 100%; /* Ensure the full height is available */
+    overflow: hidden; /* Prevent unexpected scrolling */
+}
+			
+model-viewer {
+	display: flex;
+	width: 300px;
+	height: 100%;
+	background-color: gray;
+	margin-left: auto;
+	margin-right: auto;
+}
+model-viewer::part(default-progress-bar) {
+	background-color: lime;
+	height: 1%;
+}
+
+.container {
+    width: 75%;
+	height: 75%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightgray;
+    overflow: hidden; /* Ensure child elements don’t overflow */
+	padding: 10px;
+	padding-bottom: 100px;
+}
+			
+.box {
+	width: 50%;
+	/* padding: 20px; */
+}
+			
+header {
+	color: white;
+	position: sticky;
+	height: 120px;
+	text-align: center;
+	background-color: #1B3114;
+}
+			
+#model_display {
+	position: sticky;
+	top: 60px;
+}
+			
+#option_selector {
+    flex-grow: 1; /* Allow it to expand naturally */
+    max-height: 100%; /* Prevent overflow beyond container */
+    overflow-y: auto; /* Enable scrolling */
+    padding-bottom: 20px; /* Extra spacing to avoid cut-off */
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	padding: 10px;
+}
+
+details {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%; /* Ensures it takes the full width of the parent container */
+}
+
+#potAssy {
+	overflow: visible;
+}
+
+summary {
+  background-color: white;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  display: block; /* Ensures it takes up the full width */
+}
+
+summary:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 600px) {
+    .container {
+        font-size: 75%; 
+				width: 95vw;  /* 95% of the viewport width */
+    }
+}
