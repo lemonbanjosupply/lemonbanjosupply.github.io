@@ -1,9 +1,19 @@
 const modelViewer = document.querySelector("model-viewer");
 
+let previousValues = {
+    hsShape: null,
+    neckWood: null,
+    neckFinish: null
+};
+
 async function updateTexture() {
     await modelViewer.updateComplete;
 
-    const texturePath = `assets/textures/necks/${document.getElementById("hsShapeSelect").value}/${document.getElementById("neckWoodSelect").value}/${document.getElementById("neckFinishSelect").value}.png`;
+    const hsShape = document.getElementById("hsShapeSelect").value;
+    const neckWood = document.getElementById("neckWoodSelect").value;
+    const neckFinish = document.getElementById("neckFinishSelect").value;
+
+    const texturePath = `assets/textures/necks/${hsShape}/${neckWood}/${neckFinish}.png`;
 
     const neckMaterial = modelViewer.model?.materials.find(m => m.name === "neck_1.1875");
     if (!neckMaterial) return;
@@ -28,3 +38,19 @@ window.addEventListener("load", () => {
         modelViewer.updateComplete.then(updateTexture);
     }, 500);
 });
+
+// Check every second for form value changes
+setInterval(() => {
+    const hsShape = document.getElementById("hsShapeSelect").value;
+    const neckWood = document.getElementById("neckWoodSelect").value;
+    const neckFinish = document.getElementById("neckFinishSelect").value;
+
+    if (
+        hsShape !== previousValues.hsShape ||
+        neckWood !== previousValues.neckWood ||
+        neckFinish !== previousValues.neckFinish
+    ) {
+        previousValues = { hsShape, neckWood, neckFinish };
+        updateTexture();
+    }
+}, 1000);
