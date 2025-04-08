@@ -31,7 +31,7 @@
 				<summary>Banjo Presets</summary>
 					<h3>The buttons below will allow you to preload a standard Lemon model into the customizer.</h3>
 					<h4>1935 Series</h4>
-						<button id="banjol3_00" hidden>L3-00</button>
+						<button id="banjol3_00" hidden disabled>L3-00</button>
 						<button id="banjol3_1">L3-1</button>
 						<button id="banjol3_3">L3-3</button>
 						<button id="banjol3_4">L3-4</button>
@@ -54,7 +54,7 @@
 						<h3>Will your banjo be left-handed or right-handed?</h3>
 						<select name="RightLeft" id="RightLeftSelect">
 							<option value="rightHandBanjo">Right-handed</option>
-							<option value="leftHandBanjo" hidden>Left-handed</option>
+							<option value="leftHandBanjo" hidden disabled>Left-handed</option>
 						</select>
 					</div>
 
@@ -63,8 +63,8 @@
 						<h3>What type of banjo are you interested in?</h3>
 						<select name="banjoType" id="banjoTypeSelect">
 							<option value="resoBanjo">Resonator Banjo (Bluegrass)</option>
-							<option value="open11Banjo" hidden>11-inch Open Back Banjo (Oldtime)</option>
-							<option value="open12Banjo" hidden>12-inch Open Back Banjo (Oldtime)</option>
+							<option value="open11Banjo" hidden disabled>11-inch Open Back Banjo (Oldtime)</option>
+							<option value="open12Banjo" hidden disabled>12-inch Open Back Banjo (Oldtime)</option>
 						</select>
 					</div>
 					</form>		
@@ -182,8 +182,8 @@
 						<div class="optionDiv">
 							<h3>What scale length would you like?</h3>
 							<select name="scale" id="scaleSelect">
-								<option value="25-12" hidden>25 1/2"</option>
-								<option value="26-14" hidden>26 1/4" (Bowtie)</option>
+								<option value="25-12" hidden disabled>25 1/2"</option>
+								<option value="26-14" hidden disabled>26 1/4" (Bowtie)</option>
 								<option value="26-38">26 3/8" (Prewar)</option>
 							</select>
 						</div>
@@ -193,9 +193,9 @@
 							<h3>What nut width would you like?</h3>
 							<select name="nut" id="nutSelect">
 								<option value="1-316nut">1 3/16" (Standard)</option>
-								<option value="1-14nut" hidden>1 1/4"</option>
-								<option value="1-516nut" hidden>1 5/16" (Crowe)</option>
-								<option value="1-38nut" hidden>1 3/8"</option>
+								<option value="1-14nut" hidden disabled>1 1/4"</option>
+								<option value="1-516nut" hidden disabled>1 5/16" (Crowe)</option>
+								<option value="1-38nut" hidden disabled>1 3/8"</option>
 							</select>
 						</div>
 						
@@ -212,9 +212,9 @@
 						<div class="optionDiv">
 							<h3>How many frets?</h3>
 							<select name="numFrets" id="numFretsSelect">
-								<option value="15frets" hidden>15 + 2 frets with Scoop</option>
+								<option value="15frets" hidden disabled>15 + 2 frets with Scoop</option>
 								<option value="22frets">22 frets</option>
-								<option value="24frets" hidden>24 frets with extended fretboard</option>
+								<option value="24frets" hidden disabled>24 frets with extended fretboard</option>
 							</select>
 						</div>
 						
@@ -224,7 +224,7 @@
 							<select name="fbWood" id="fbWoodSelect">
 								<option value="fbRose">Rosewood</option>
 								<option value="fbEbony">Ebony</option>
-								<option value="fbYellow" hidden>Yellowheart</option>
+								<option value="fbYellow" hidden disabled>Yellowheart</option>
 							</select>
 						</div>
 						
@@ -241,27 +241,27 @@
 						<div class="optionDiv">
 							<h3>What type of inlay material in your fretboard?</h3>
 							<select name="fbInlayPat" id="fbInlayPatSelect">
-								<option value="dots1" hidden>Dots: 5, 7, 10, 12, 15</option>
-								<option value="dots2" hidden>Dots: 5, 7, 10, 12, 15, 17</option>
-								<option value="dots3">Dots: 5, 7, 10, 12, 15, 17, 19, 22</option>
-								<option value="dots4" hidden>Dots: 3, 5, 7, 10, 12, 15, 17, 19, 22</option>
-								<option value="diamSq" hidden>Diamonds and Squares</option>
-								<option value="seagulls">Seagulls</option>
-								<option value="bowties1">Bowties w/ 22nd</option>
-								<option value="bowties2">Bowties w/o 22nd</option>
-								<option value="leavB1">Leaves and Bows 1</option>
-								<option value="leavB2" hidden>Leaves and Bows 2</option>
-								<option value="leavB3" hidden>Leaves and Bows 3</option>
-								<option value="flyEag">Flying Eagles</option>
-								<option value="wreath" hidden>Wreath</option>
-								<option value="rb7" hidden>RB-7</option>
-								<option value="rb12" hidden>RB-12/18</option>
-								<option value="blackJ" hidden>Blackjack</option>
-								<option value="hearts1" hidden>Hearts and Flowers</option>
-								<option value="hearts2" hidden>Hearts and Flowers w/ 15th</option>
-								<option value="hearts3" hidden>Hearts and Flowers w/ 1st and 15th</option>
-								<option value="floren" hidden>Florentine</option>
-								<option value="bella" hidden>Bella Voce</option>
+								<option value="dots1FB" hidden disabled>Dots: 5, 7, 10, 12, 15</option>
+								<option value="dots2FB" hidden disabled>Dots: 5, 7, 10, 12, 15, 17</option>
+								<option value="dots3FB">Dots: 5, 7, 10, 12, 15, 17, 19, 22</option>
+								<option value="dots4FB" hidden disabled>Dots: 3, 5, 7, 10, 12, 15, 17, 19, 22</option>
+								<option value="diamSqFB" hidden disabled>Diamonds and Squares</option>
+								<option value="seagullsFB">Seagulls</option>
+								<option value="bowties1FB">Bowties w/ 22nd</option>
+								<option value="bowties2FB" hidden disabled>Bowties w/o 22nd</option>
+								<option value="leavB1FB">Leaves and Bows 1</option>
+								<option value="leavB2FB" hidden disabled>Leaves and Bows 2</option>
+								<option value="leavB3FB" hidden disabled>Leaves and Bows 3</option>
+								<option value="flyEagFB">Flying Eagles</option>
+								<option value="wreathFB" hidden disabled>Wreath</option>
+								<option value="rb7FB" hidden disabled>RB-7</option>
+								<option value="rb12FB" hidden disabled>RB-12/18</option>
+								<option value="blackJFB" hidden disabled>Blackjack</option>
+								<option value="hearts1FB" hidden disabled>Hearts and Flowers</option>
+								<option value="hearts2FB" hidden disabled>Hearts and Flowers w/ 15th</option>
+								<option value="hearts3FB" hidden disabled>Hearts and Flowers w/ 1st and 15th</option>
+								<option value="florenFB" hidden disabled>Florentine</option>
+								<option value="bellaFB" hidden disabled>Bella Voce</option>
 							</select>
 						</div>
 						
@@ -272,12 +272,12 @@
 								<option value="noFbBind">None</option>
 								<option value="whiteFbBind">White</option>
 								<option value="wbwFbBind">White/Black/White</option>
-								<option value="blackFbBind" hidden>Black</option>
-								<option value="ivorFbBind" hidden>Ivoroid</option>
-								<option value="ivwFbBind" hidden>Ivoroid/Black/White</option>
-								<option value="tortFbBind" hidden>Tortoise Shell/White/Black</option>
-								<option value="curlFbBind" hidden>Curly Maple/Black/White/Black</option>
-								<option value="pearlFbBind" hidden>White Pearloid</option>
+								<option value="blackFbBind" hidden disabled>Black</option>
+								<option value="ivorFbBind" hidden disabled>Ivoroid</option>
+								<option value="ivwFbBind" hidden disabled>Ivoroid/Black/White</option>
+								<option value="tortFbBind" hidden disabled>Tortoise Shell/White/Black</option>
+								<option value="curlFbBind" hidden disabled>Curly Maple/Black/White/Black</option>
+								<option value="pearlFbBind" hidden disabled>White Pearloid</option>
 							</select>
 						</div>
 						
@@ -312,17 +312,17 @@
 								<option value="noHeelCap">None</option>
 								<option value="rosewoodHeelCap">Rosewood</option>
 								<option value="ebonyHeelCap">Ebony</option>
-								<option value="curlyHeelCap" hidden>Curly Maple</option>
-								<option value="whiteHeelCap" hidden>White</option>
-								<option value="ivorHeelCap" hidden>Ivoroid</option>
-								<option value="pearlHeelCap" hidden>White Pearloid</option>
-								<option value="checkHeelCap" hidden>Checkerboard</option>
-								<option value="goldHeelCap" hidden>Gold Sparkle</option>
+								<option value="curlyHeelCap" hidden disabled>Curly Maple</option>
+								<option value="whiteHeelCap" hidden disabled>White</option>
+								<option value="ivorHeelCap" hidden disabled>Ivoroid</option>
+								<option value="pearlHeelCap" hidden disabled>White Pearloid</option>
+								<option value="checkHeelCap" hidden disabled>Checkerboard</option>
+								<option value="goldHeelCap" hidden disabled>Gold Sparkle</option>
 							</select>
 						</div>
 						
 						<!-- Heel Cap Binding -->
-						<div class="optionDiv" hidden>
+						<div class="optionDiv" hidden disabled>
 							<h3>What kind of heel cap binding would you like?</h3>
 							<select name="heelCapBind" id="heelCapBindSelect">	
 								<option value="noHeelBind">None</option>
@@ -347,13 +347,13 @@
 							<h3>Which headstock shape do you prefer?</h3>
 							<select name="hsShape" id="hsShapeSelect">
 								<option value="doubleCutHS">Double Cut</option>
-								<option value="fiddleCutHS1" hidden>Fiddle Cut 1</option>
+								<option value="fiddleCutHS1" hidden disabled>Fiddle Cut 1</option>
 								<option value="fiddleCutHS2">Fiddle Cut 2</option>
-								<option value="kelHS" hidden>Kel Kroydon</option>
-								<option value="cokeHS" hidden>Coke Bottle</option>
-								<option value="style1HS" hidden>Style 1</option>
-								<option value="style00HS" hidden>Style 00</option>
-								<option value="paddleHS" hidden>Paddle</option>
+								<option value="kelHS" hidden disabled>Kel Kroydon</option>
+								<option value="cokeHS" hidden disabled>Coke Bottle</option>
+								<option value="style1HS" hidden disabled>Style 1</option>
+								<option value="style00HS" hidden disabled>Style 00</option>
+								<option value="paddleHS" hidden disabled>Paddle</option>
 								<option value="flyHS">Flyswatter</option>
 							</select>
 						</div>
@@ -364,7 +364,7 @@
 							<select name="hsOverlay" id="hsOverlaySelect">
 								<option value="rosewoodHS">Rosewood</option>
 								<option value="ebonyHS">Ebony</option>
-								<option value="yellowHS" hidden>Yellowheart</option>
+								<option value="yellowHS" hidden disabled>Yellowheart</option>
 							</select>
 						</div>
 						
@@ -382,19 +382,19 @@
 							<h3>Which inlay pattern do you want in your headstock?</h3>
 							<select name="hsInlayPat" id="hsInlayPatSelect">
 								<option value="hsLogoOnly">Lemon Logo Only</option>
-								<option value="hsDiam" hidden>Diamonds and Squares</option>
+								<option value="hsDiam" hidden disabled>Diamonds and Squares</option>
 								<option value="hsSeagulls">Seagulls</option>
 								<option value="hsBowtie">Bowtie</option>
 								<option value="hsLeaves">Leaves and Bows</option>
-								<option value="hsHearts" hidden>Hearts and Flowers</option>
-								<option value="hsFloren" hidden>Florentine</option>
-								<option value="hsWreath" hidden>Wreath</option>
-								<option value="hsRB7" hidden>RB-7</option>
-								<option value="hsRB12" hidden>RB-12/18</option>
-								<option value="hsFleur" hidden>Fleur-de-lis</option>
+								<option value="hsHearts" hidden disabled>Hearts and Flowers</option>
+								<option value="hsFloren" hidden disabled>Florentine</option>
+								<option value="hsWreath" hidden disabled>Wreath</option>
+								<option value="hsRB7" hidden disabled>RB-7</option>
+								<option value="hsRB12" hidden disabled>RB-12/18</option>
+								<option value="hsFleur" hidden disabled>Fleur-de-lis</option>
 								<option value="hsFlying">Flying Eagles</option>
-								<option value="hsBlackJ" hidden>Blackjack</option>
-								<option value="hsBella" hidden>Bella Voce</option>
+								<option value="hsBlackJ" hidden disabled>Blackjack</option>
+								<option value="hsBella" hidden disabled>Bella Voce</option>
 							</select>
 						</div>
 						
@@ -404,21 +404,21 @@
 							<select name="hsBind" id="hsBindSelect">
 								<option value="hsBindNone">None</option>
 								<option value="hsBindWhite">White</option>
-								<option value="hsBindWhiteDbl" hidden>White Double</option>
-								<option value="hsBindWBWDbl" hidden>White/Black/White Double</option>
-								<option value="hsBindBlack" hidden>Black</option>
-								<option value="hsBindIvor" hidden>Ivoroid</option>
-								<option value="hsBindIvorDbl" hidden>Ivoroid Double</option>
-								<option value="hsBindIBW" hidden>Ivoroid/Black/White</option>
-								<option value="hsBindIBWDbl" hidden>Ivoroid/Black/White Double</option>
-								<option value="hsBindTort" hidden>Tortoise Shell/Black/White</option>
-								<option value="hsBindCurly" hidden>Curly Maple/Black/White/Black</option>
-								<option value="hsBindPearl" hidden>White Pearloid</option>
+								<option value="hsBindWhiteDbl" hidden disabled>White Double</option>
+								<option value="hsBindWBWDbl" hidden disabled>White/Black/White Double</option>
+								<option value="hsBindBlack" hidden disabled>Black</option>
+								<option value="hsBindIvor" hidden disabled>Ivoroid</option>
+								<option value="hsBindIvorDbl" hidden disabled>Ivoroid Double</option>
+								<option value="hsBindIBW" hidden disabled>Ivoroid/Black/White</option>
+								<option value="hsBindIBWDbl" hidden disabled>Ivoroid/Black/White Double</option>
+								<option value="hsBindTort" hidden disabled>Tortoise Shell/Black/White</option>
+								<option value="hsBindCurly" hidden disabled>Curly Maple/Black/White/Black</option>
+								<option value="hsBindPearl" hidden disabled>White Pearloid</option>
 							</select>
 						</div>
 						
 						<!-- Tuners -->
-						<div class="optionDiv" hidden>
+						<div class="optionDiv" hidden disabled>
 							<h3>What brand of tuners do you prefer?</h3>
 							<select name="tuners" id="tunersSelect">
 								<option value="tunersGotoh">Gotoh 4:1 Ratio</option>
@@ -430,7 +430,7 @@
 						</div>
 						
 						<!-- Tuner Button Shape -->
-						<div class="optionDiv" hidden>
+						<div class="optionDiv" hidden disabled>
 							<h3>What shape tuner buttons do you want?</h3>
 							<select name="tunerButtonShape" id="tunerButtonShapeSelect">
 								<option value="tunerButtonOval">Oval</option>
@@ -439,7 +439,7 @@
 						</div>
 						
 						<!-- Tuner Button Color -->
-						<div class="optionDiv" hidden>
+						<div class="optionDiv" hidden disabled>
 							<h3>What color tuner buttons do you want?</h3>
 							<select name="tunerButtonColor" id="tunerButtonColorSelect">
 								<option value="tunerButtonCreamy">Creamy White</option>
@@ -462,7 +462,7 @@
 							<h3>What type of resonator do you want?</h3>
 							<select name="resoType" id="resoTypeSelect">
 								<option value="standardReso">Standard Resonator</option>
-								<option value="TTReso" hidden>Top-Tension Style Resonator</option>
+								<option value="TTReso" hidden disabled>Top-Tension Style Resonator</option>
 							</select>
 						</div>
 						
@@ -495,13 +495,13 @@
 								<option value="resoBindWhite">White</option>
 								<option value="resoBindWBW">White/Black/White</option>
 								<option value="resoBindWBWDbl">White/Black/White Double</option>
-								<option value="resoBindBlack" hidden>Black</option>
-								<option value="resoBindIvor" hidden>Ivoroid</option>
-								<option value="resoBindIBW" hidden>Ivoroid/Black/White</option>
-								<option value="resoBindIBWDbl" hidden>Ivoroid/Black/White Double</option>
-								<option value="resoBindTort" hidden>Tortoise Shell/Black/White</option>
-								<option value="resoBindCurly" hidden>Curly Maple/Black/White/Black</option>
-								<option value="resoBindPearl" hidden>White Pearloid</option>
+								<option value="resoBindBlack" hidden disabled>Black</option>
+								<option value="resoBindIvor" hidden disabled>Ivoroid</option>
+								<option value="resoBindIBW" hidden disabled>Ivoroid/Black/White</option>
+								<option value="resoBindIBWDbl" hidden disabled>Ivoroid/Black/White Double</option>
+								<option value="resoBindTort" hidden disabled>Tortoise Shell/Black/White</option>
+								<option value="resoBindCurly" hidden disabled>Curly Maple/Black/White/Black</option>
+								<option value="resoBindPearl" hidden disabled>White Pearloid</option>
 							</select>
 						</div>
 						
@@ -511,7 +511,7 @@
 							<select name="concenRings" id="ConcenRingsSelect">
 								<option value="noConcenRings">None</option>
 								<option value="concenWBW">White/Black/White</option>
-								<option value="concenSty4" hidden>Style 4</option>
+								<option value="concenSty4" hidden disabled>Style 4</option>
 							</select>
 						</div>
 					</form>
@@ -549,7 +549,7 @@
 						</div>
 						
 						<!-- Aged Binding -->
-						<div class="optionDiv" hidden>
+						<div class="optionDiv" hidden disabled>
 							<h3>Would you like your binding to be aged?</h3>
 							<select name="bindingAge" id="bindingAgeSelect">
 								<option value="bindAgeNone">No Aging</option>
@@ -559,7 +559,7 @@
 						</div>
 						
 						<!-- Aged HS Inlays -->
-						<div class="optionDiv" hidden>
+						<div class="optionDiv" hidden disabled>
 							<h3>Would you like your headstock inlays to be aged?</h3>
 							<select name="hsAge" id="hsAgeSelect">
 								<option value="hsAgeNone">No Aging</option>
