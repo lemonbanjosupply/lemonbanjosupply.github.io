@@ -20,57 +20,50 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
         function applyPresetValues(presetKey) {
-        if (!presets[presetKey]) {
-            console.error(`Preset "${presetKey}" not found.`);
-            return;
-        }
+			if (!presets[presetKey]) {
+				return;
+			}
 
-        // Clear all previous selections before applying new preset
-        const allElements = document.querySelectorAll("select, input, textarea");
-        allElements.forEach(el => {
-            if (el.type === "radio" || el.type === "checkbox") {
-                el.checked = false;
-            } else {
-                el.value = '';
-            }
-        });
+			// Clear all previous selections before applying new preset
+			const allElements = document.querySelectorAll("select, input, textarea");
+			allElements.forEach(el => {
+				if (el.type === "radio" || el.type === "checkbox") {
+					el.checked = false;
+				} else {
+					el.value = '';
+				}
+			});
 
-        const presetParams = new URLSearchParams(presets[presetKey]);
+			const presetParams = new URLSearchParams(presets[presetKey]);
 
-        presetParams.forEach((value, key) => {
-            let elements = document.querySelectorAll(`[id="${key}"], [name="${key}"]`);
-            elements.forEach(el => {
-                if (el.type === "radio" || el.type === "checkbox") {
-                    el.checked = el.value === value;
-                } else {
-                    // Special handling for nut width to avoid resetting to empty value
-                    if (key === "nutSelect" && value === "") {
-                        return; // Skip setting nut width to empty if not specified
-                    }
-                    el.value = value;
-                }
-            });
-        });
+			presetParams.forEach((value, key) => {
+				let elements = document.querySelectorAll(`[id="${key}"], [name="${key}"]`);
+				elements.forEach(el => {
+					if (el.type === "radio" || el.type === "checkbox") {
+						el.checked = el.value === value;
+					} else {
+						// Special handling for nut width to avoid resetting to empty value
+						if (key === "nutSelect" && value === "") {
+							return;
+						}
+						el.value = value;
+					}
+				});
+			});
 
-        // Trigger a change event in case any dependent logic needs to update
-        document.querySelectorAll("select, input, textarea").forEach(el => {
-            el.dispatchEvent(new Event("change"));
-        });
-    }
+			// Trigger a change event in case any dependent logic needs to update
+			document.querySelectorAll("select, input, textarea").forEach(el => {
+				el.dispatchEvent(new Event("change"));
+			});
+		}
 
-    // Automatically bind buttons with matching IDs to their respective presets
-    Object.keys(presets).forEach(presetKey => {
-        const button = document.getElementById(presetKey);
-        if (button) {
-            button.addEventListener("click", function () {
-                applyPresetValues(presetKey);
-            });
-        }
-    });
-});
-
-// Trigger a change event in case any dependent logic needs to update
-    document.querySelectorAll("select, input, textarea").forEach(el => {
-        el.dispatchEvent(new Event("change"));
-        console.log(`Dispatched change event for ${el.id}`);
-    });
+		// Automatically bind buttons with matching IDs to their respective presets
+		Object.keys(presets).forEach(presetKey => {
+			const button = document.getElementById(presetKey);
+			if (button) {
+				button.addEventListener("click", function () {
+					applyPresetValues(presetKey);
+				});
+			}
+		});
+	});

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const model = modelViewer.model;
         if (!model) return;
 
-        const materials = ['opfHdw', 'tpfHdw', 'ttHdw', 'opfRim', 'tpfRim']
+        const materials = ['opfHdw', 'tpfHdw', 'ttHdw', 'opfRim', 'tpfRim', 'gotohTuners']
             .reduce((acc, name) => ({ ...acc, [name]: model.getMaterialByName(name) }), {});
 
         if (Object.values(materials).some(m => !m)) return;
@@ -29,42 +29,56 @@ document.addEventListener('DOMContentLoaded', () => {
         const isTT = hardwareValue === 'topT';
 
         const platingColors = {
-            nickel: [0.9, 0.9, 0.8, 1],  // Nickel with slight yellow tint
-            chrome: [0.8, 0.9, 0.95, 1],    // Chrome with reduced blue tint (50% less blue)
-            gold: [1, 0.8, 0, 1]         // Gold
+            nickel: [0.9, 0.9, 0.8, 1],
+            chrome: [0.8, 0.9, 0.95, 1],
+            gold: [1, 0.8, 0, 1]
         };
+
+        const selectedColor = platingColors[platingType] || [1, 1, 0, 1];
 
         // Hide all hardware parts initially
         ['opfHdw', 'tpfHdw', 'ttHdw'].forEach(key => {
             const material = materials[key];
-            material.alphaMode = 'MASK';  // Initially invisible
+            material.alphaMode = 'MASK';
             material.alphaTest = 0.5;
             material.depthWrite = false;
-            material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 0, 0]); // Fully transparent
+            material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 0, 0]);
         });
 
-        // Make only the selected hardware visible and set the plating color
+        // Show selected hardware and apply plating color
         if (isOPF || isTPF || isTT) {
             ['opfHdw', 'tpfHdw', 'ttHdw'].forEach(key => {
                 const material = materials[key];
                 if ((key === 'opfHdw' && isOPF) || (key === 'tpfHdw' && isTPF) || (key === 'ttHdw' && isTT)) {
-                    material.alphaMode = 'BLEND';  // Visible
+                    material.alphaMode = 'BLEND';
                     material.alphaTest = 0.5;
                     material.depthWrite = false;
-                    material.pbrMetallicRoughness.setBaseColorFactor(platingColors[platingType] || [1, 1, 0, 1]);  // Apply selected color
+                    material.pbrMetallicRoughness.setBaseColorFactor(selectedColor);
                 }
             });
         }
 
-        // Adjust rim visibility and color (brown for rims)
+        // Adjust rim visibility and color
         ['opfRim', 'tpfRim'].forEach(key => {
             const material = materials[key];
-            const isVisible = (key === 'opfRim' && (isOPF || isTT)) || (key === 'tpfRim' && isTPF);  // Keep opfRim visible for topT
+            const isVisible = (key === 'opfRim' && (isOPF || isTT)) || (key === 'tpfRim' && isTPF);
             material.alphaMode = 'MASK';
-            material.pbrMetallicRoughness.setBaseColorFactor([0.3, 0.15, 0.05, isVisible ? 1 : 0]); // Rim color (brown) and visibility
+            material.pbrMetallicRoughness.setBaseColorFactor([0.3, 0.15, 0.05, isVisible ? 1 : 0]);
         });
 
+        // Set gotohTuners to match the plating color
+        const tunersMaterial = materials.gotohTuners;
+        if (tunersMaterial) {
+            tunersMaterial.alphaMode = 'BLEND';
+            tunersMaterial.alphaTest = 0.5;
+            tunersMaterial.depthWrite = false;
+            tunersMaterial.pbrMetallicRoughness.setBaseColorFactor(selectedColor);
+            tunersMaterial.pbrMetallicRoughness.setMetallicFactor(0.85);
+        }
+
         // Set metallic factor for all materials
-        Object.values(materials).forEach(material => material.pbrMetallicRoughness.setMetallicFactor(0.85));
+        Object.values(materials).forEach(material => {
+            material.pbrMetallicRoughness.setMetallicFactor(0.85);
+        });
     }
 });
