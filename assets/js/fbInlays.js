@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const modelViewer = document.querySelector('#viewer');
+    const modelViewerFBInlays = document.querySelector('#viewer');
     const fbInlayPatSelect = document.querySelector('#fbInlayPatSelect');
 
-    if (!modelViewer || !fbInlayPatSelect) return;
+    if (!modelViewerFBInlays || !fbInlayPatSelect) return;
 
     // Get all inlay pattern values from the select dropdown
     const inlayPatternOptions = Array.from(fbInlayPatSelect.options)
         .map(option => option.value)
         .filter(value => value !== "");  // Filter out any empty values (if any)
 
-    modelViewer.addEventListener('load', async () => {
-        await modelViewer.updateComplete;
+    modelViewerFBInlays.addEventListener('load', async () => {
+        await modelViewerFBInlays.updateComplete;
 
-        const model = modelViewer.model;
+        const model = modelViewerFBInlays.model;
         if (!model) return;
 
         const selectedPattern = fbInlayPatSelect.value;
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update material based on selection changes
     fbInlayPatSelect.addEventListener('change', async () => {
         const selectedPattern = fbInlayPatSelect.value;
-        await modelViewer.updateComplete;
-        const model = modelViewer.model;
+        await modelViewerFBInlays.updateComplete;
+        const model = modelViewerFBInlays.model;
         if (!model) return;
 
         // Iterate through all model materials and adjust transparency

@@ -1,4 +1,4 @@
-const modelViewer = document.querySelector("model-viewer");
+const modelViewerNeckFinish = document.querySelector("model-viewer");
 
 let previousValues = {
     hsShape: null,
@@ -7,7 +7,7 @@ let previousValues = {
 };
 
 async function updateTexture() {
-    await modelViewer.updateComplete;
+    await modelViewerNeckFinish.updateComplete;
 
     const hsShape = document.getElementById("hsShapeSelect").value;
     const neckWood = document.getElementById("neckWoodSelect").value;
@@ -15,17 +15,17 @@ async function updateTexture() {
 
     const texturePath = `assets/textures/necks/${hsShape}/${neckWood}/${neckFinish}.png`;
 
-    const neckMaterial = modelViewer.model?.materials.find(m => m.name === "neck_1.1875");
+    const neckMaterial = modelViewerNeckFinish.model?.materials.find(m => m.name === "neck_1.1875");
     if (!neckMaterial) return;
 
-    const newTexture = await modelViewer.createTexture(texturePath);
+    const newTexture = await modelViewerNeckFinish.createTexture(texturePath);
     if (!newTexture) return;
 
     neckMaterial.pbrMetallicRoughness.baseColorTexture?.setTexture(newTexture);
 }
 
 // Update texture when model source changes
-modelViewer.addEventListener("load", updateTexture);
+modelViewerNeckFinish.addEventListener("load", updateTexture);
 
 // Update texture when dropdowns change
 ["hsShapeSelect", "neckWoodSelect", "neckFinishSelect"].forEach(id => {
@@ -35,7 +35,7 @@ modelViewer.addEventListener("load", updateTexture);
 // Ensure correct texture on initial page load
 window.addEventListener("load", () => {
     setTimeout(() => {
-        modelViewer.updateComplete.then(updateTexture);
+        modelViewerNeckFinish.updateComplete.then(updateTexture);
     }, 500);
 });
 

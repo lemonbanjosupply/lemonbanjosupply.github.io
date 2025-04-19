@@ -422,10 +422,10 @@
 							<h3>What brand of tuners do you prefer?</h3>
 							<select name="tuners" id="tunersSelect">
 								<option value="tunersGotoh">Gotoh 4:1 Ratio</option>
-								<option value="tunersRickard">Rickard 10:1 Ratio</option>
-								<option value="tunersKeith">Keith 4:1 Ratio</option>
-								<option value="tunersKeithD1">Keith 4:1 Ratio w/ D-Tuners on 2nd and 3rd</option>
-								<option value="tunersKeithD2">Keith D-Tuners on all 4</option>
+								<option value="tunersRickard"hidden disabled>Rickard 10:1 Ratio</option>
+								<option value="tunersKeith"hidden disabled>Keith 4:1 Ratio</option>
+								<option value="tunersKeithD1"hidden disabled>Keith 4:1 Ratio w/ D-Tuners on 2nd and 3rd</option>
+								<option value="tunersKeithD2"hidden disabled>Keith D-Tuners on all 4</option>
 							</select>
 						</div>
 						
@@ -434,7 +434,7 @@
 							<h3>What shape tuner buttons do you want?</h3>
 							<select name="tunerButtonShape" id="tunerButtonShapeSelect">
 								<option value="tunerButtonOval">Oval</option>
-								<option value="tunerButtonKey">Keystone</option>
+								<option value="tunerButtonKey"hidden disabled>Keystone</option>
 							</select>
 						</div>
 						
@@ -443,12 +443,12 @@
 							<h3>What color tuner buttons do you want?</h3>
 							<select name="tunerButtonColor" id="tunerButtonColorSelect">
 								<option value="tunerButtonCreamy">Creamy White</option>
-								<option value="tunerButtonPearl">White Pearloid</option>
-								<option value="tunerButtonIvor">Ivoroid</option>
-								<option value="tunerButtonAmber">Amber</option>
-								<option value="tunerButtonTort">Tortoise Shell</option>
-								<option value="tunerButtonEbony">Ebony</option>
-								<option value="tunerButtonBlack">Black</option>
+								<option value="tunerButtonPearl"hidden disabled>White Pearloid</option>
+								<option value="tunerButtonIvor"hidden disabled>Ivoroid</option>
+								<option value="tunerButtonAmber"hidden disabled>Amber</option>
+								<option value="tunerButtonTort"hidden disabled>Tortoise Shell</option>
+								<option value="tunerButtonEbony"hidden disabled>Ebony</option>
+								<option value="tunerButtonBlack"hidden disabled>Black</option>
 							</select>
 						</div>
 					</form>
@@ -470,12 +470,12 @@
 						<div class="optionDiv">
 							<h3>What wood do you want your resonator to be?</h3>
 							<select name="resoWood" id="resoWoodSelect">
-								<option value="resoStraigtMpl">Straight Maple</option>
+								<option value="resoStrMpl">Straight Maple</option>
 								<option value="resoCurMpl">Curly Maple</option>
 								<option value="resoMahog">Mahogany</option>
-								<option value="resoWalnut">Walnut</option>
+								<option value="resoWalnut" hidden disabled>Walnut</option>
 								<option value="resoBurlWalnut">Burled Walnut (Standard Resonator Only)</option>
-								<option value="resoQuiltMpl">Quilted Maple (Standard Resonator Only)</option>
+								<option value="resoQuiltMpl" hidden disabled>Quilted Maple (Standard Resonator Only)</option>
 							</select>
 						</div>
 						
@@ -638,6 +638,7 @@
 	<script src="assets/js/banjoPresets.js"></script>
 	<script src="assets/js/fbWood.js"></script>
 	<script src="assets/js/fbInlays.js"></script>
+	<script src="assets/js/resoFinish.js"></script>
 	
 </body>
 </html>

@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const modelViewer = document.querySelector('#viewer');
-    if (!modelViewer) return;
+    const modelViewerTailpiece = document.querySelector('#viewer');
+    if (!modelViewerTailpiece) return;
 
-    modelViewer.addEventListener('load', () => {
-        const model = modelViewer.model;
+    modelViewerTailpiece.addEventListener('load', () => {
+        const model = modelViewerTailpiece.model;
         if (!model) return;
 
         const materials = ['opfHdw', 'tpfHdw', 'ttHdw', 'opfRim', 'tpfRim', 'prestoTp', 'kershnerTp', 'twoHumpTp', 'clamshellTp']

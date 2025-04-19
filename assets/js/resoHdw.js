@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const modelViewer = document.querySelector('#viewer');
-    if (!modelViewer) return;
+    const modelViewerHdw = document.querySelector('#viewer');
+    if (!modelViewerHdw) return;
 
-    modelViewer.addEventListener('load', () => {
-        const model = modelViewer.model;
+    modelViewerHdw.addEventListener('load', () => {
+        const model = modelViewerHdw.model;
         if (!model) return;
 
         const materials = ['opfHdw', 'tpfHdw', 'ttHdw', 'opfRim', 'tpfRim', 'gotohTuners']

@@ -1,6 +1,6 @@
-// Ensure `modelViewer` is not declared more than once
-if (!window.modelViewer) {
-    window.modelViewer = document.querySelector("model-viewer");
+// Ensure `modelViewerFBWood` is not declared more than once
+if (!window.modelViewerFBWood) {
+    window.modelViewerFBWood = document.querySelector("model-viewer");
 }
 
 // Ensure `previousValues` is only declared once
@@ -17,7 +17,7 @@ if (!window.previousValues) {
 // Function to handle texture updates based on form values
 async function updateFretboardTexture() {
   // Wait for model to load
-  await modelViewer.updateComplete;
+  await modelViewerFBWood.updateComplete;
 
   // Get form values
   const scale = document.getElementById("scaleSelect").value;
@@ -45,14 +45,14 @@ async function updateFretboardTexture() {
   const materialName = `fb_${frets.replace("frets", "")}frets_1.1875`;
 
   // Find the material in the model
-  const material = modelViewer.model?.materials.find(m => m.name === materialName);
+  const material = modelViewerFBWood.model?.materials.find(m => m.name === materialName);
   if (!material) {
     return;
   }
 
   // Load the texture from the constructed path
   try {
-    const newTexture = await modelViewer.createTexture(texturePath);
+    const newTexture = await modelViewerFBWood.createTexture(texturePath);
     if (!newTexture) {
       return;
     }
@@ -65,7 +65,7 @@ async function updateFretboardTexture() {
 }
 
 // Event listener for the model-viewer load event
-modelViewer.addEventListener("load", updateFretboardTexture);
+modelViewerFBWood.addEventListener("load", updateFretboardTexture);
 
 // Update texture when dropdown values change
 ["scaleSelect", "nutSelect", "numFretsSelect", "fbWoodSelect", "fbBindSelect"].forEach(id => {
@@ -75,7 +75,7 @@ modelViewer.addEventListener("load", updateFretboardTexture);
 // Ensure texture is updated when page is loaded
 window.addEventListener("load", () => {
   setTimeout(() => {
-    modelViewer.updateComplete.then(updateFretboardTexture);
+    modelViewerFBWood.updateComplete.then(updateFretboardTexture);
   }, 500);
 });
 

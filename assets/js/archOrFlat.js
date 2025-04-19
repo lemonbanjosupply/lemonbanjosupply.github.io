@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const modelViewer = document.querySelector('#viewer');
+    const modelViewerArchOrFlat = document.querySelector('#viewer');
     const toneRingSelect = document.querySelector('#toneRingSelect');
     const ezSwapSelect = document.querySelector('#ezSwapSelect');
     const ezSwapDivs = document.querySelectorAll('.optionDiv.ezSwap');
 
-    if (!modelViewer || !toneRingSelect || !ezSwapSelect || !ezSwapDivs) return;
+    if (!modelViewerArchOrFlat || !toneRingSelect || !ezSwapSelect || !ezSwapDivs) return;
 
     let materialArch = null;
     let materialFlat = null;
@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    modelViewer.addEventListener('load', async () => {
+    modelViewerArchOrFlat.addEventListener('load', async () => {
         // Ensure model is fully ready
-        await modelViewer.updateComplete;
+        await modelViewerArchOrFlat.updateComplete;
 
-        const model = modelViewer.model;
+        const model = modelViewerArchOrFlat.model;
         if (!model) return;
 
         materialArch = model.getMaterialByName('banjoHeadWhiteArch');
