@@ -1,58 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
     const modelViewerFBInlays = document.querySelector('#viewer');
     const fbInlayPatSelect = document.querySelector('#fbInlayPatSelect');
+    const fbInlayMatSelect = document.querySelector('#fbInlayMatSelect');
 
-    if (!modelViewerFBInlays || !fbInlayPatSelect) return;
+    if (!modelViewerFBInlays || !fbInlayPatSelect || !fbInlayMatSelect) return;
 
-    // Get all inlay pattern values from the select dropdown
+    // Get all pattern_material combinations from the pattern options
     const inlayPatternOptions = Array.from(fbInlayPatSelect.options)
         .map(option => option.value)
-        .filter(value => value !== "");  // Filter out any empty values (if any)
+        .filter(value => value !== "");
 
     modelViewerFBInlays.addEventListener('load', async () => {
         await modelViewerFBInlays.updateComplete;
-
-        const model = modelViewerFBInlays.model;
-        if (!model) return;
-
-        const selectedPattern = fbInlayPatSelect.value;
-
-        // Iterate through all model materials and adjust transparency
-        model.materials.forEach(material => {
-            if (inlayPatternOptions.includes(material.name)) {
-                if (material.name === selectedPattern) {
-                    // Make the selected inlay pattern opaque
-                    material.alphaMode = 'OPAQUE';  // Set to opaque
-                    material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 1]);  // Fully opaque
-                } else {
-                    // Make other inlay patterns transparent
-                    material.alphaMode = 'BLEND';  // Set to transparent
-                    material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 0]);  // Fully transparent
-                }
-            }
-        });
+        updateFretboardInlayMaterial();
     });
 
-    // Update material based on selection changes
-    fbInlayPatSelect.addEventListener('change', async () => {
-        const selectedPattern = fbInlayPatSelect.value;
+    // Update material on pattern or material change
+    fbInlayPatSelect.addEventListener('change', updateFretboardInlayMaterial);
+    fbInlayMatSelect.addEventListener('change', updateFretboardInlayMaterial);
+
+    async function updateFretboardInlayMaterial() {
         await modelViewerFBInlays.updateComplete;
         const model = modelViewerFBInlays.model;
         if (!model) return;
 
-        // Iterate through all model materials and adjust transparency
+        const selectedPattern = fbInlayPatSelect.value;
+        const selectedMaterial = fbInlayMatSelect.value;
+        const selectedName = `${selectedPattern}_${selectedMaterial}`;
+
+        // Show only the selected combination; hide others
         model.materials.forEach(material => {
-            if (inlayPatternOptions.includes(material.name)) {
-                if (material.name === selectedPattern) {
-                    // Make the selected inlay pattern opaque
-                    material.alphaMode = 'OPAQUE';  // Set to opaque
-                    material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 1]);  // Fully opaque
+            const matchPrefix = inlayPatternOptions.find(pattern => material.name.startsWith(pattern + "_"));
+            if (matchPrefix) {
+                if (material.name === selectedName) {
+                    // Selected combo = visible
+                    material.alphaMode = 'OPAQUE';
+                    material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 1]);
                 } else {
-                    // Make other inlay patterns transparent
-                    material.alphaMode = 'BLEND';  // Set to transparent
-                    material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 0]);  // Fully transparent
+                    // Other combos = hidden
+                    material.alphaMode = 'BLEND';
+                    material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 0]);
                 }
             }
         });
-    });
+    }
 });
