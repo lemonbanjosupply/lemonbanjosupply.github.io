@@ -17,8 +17,9 @@
 	<header>
 		<img id="headerLogo" src="assets/images/logo.jpg">
 		<h2>75 Custom Banjo Designer</h1>
+		
 	</header>
-	
+	<h3 style="color:red; text-align: center;"><i>This designer is experimental, and therefore, may have some issues. These issues will be resolved, and new features will be added as well.</i></h3>
 	<div class="container">
 		<div class="box" id="option_selector">
 			<h2>Option Selector</h2>
@@ -576,11 +577,12 @@
 		</div>
 	
 		<div class="box" id="model_display">
-		<h3 style="color:red;"><i>Please be patient, loading times can be slow as I work bugs out of the process.</i></h3>
+		<!-- <h3 style="color:red;"><i>Please be patient, loading times can be slow as I work bugs out of the process.</i></h3> -->
 			<model-viewer
 				id="viewer"
 				src=""
 				alt="3D model"
+				poster="assets/images/loading.gif"
 				camera-controls
 				loading="eager"
 				camera-orbit="-35deg 75deg 100%" 
@@ -622,6 +624,8 @@
 					<h3 style="margin: 0; font-size: 12px;">Controls</h3>
 					<p style="margin: 5px 0;">Left Click: Rotate<br>Right Click: Pan<br>Scroll: Zoom</p>
 				</div>
+			</model-viewer>
+			<model-viewer src="assets\3DModels\rightHandBanjo\resoBanjo\26-38\flyHS.glb" style="display: none">
 			</model-viewer>
 		</div>
 	</div>
