@@ -19,14 +19,11 @@
 		<h2>75 Custom Banjo Designer</h1>
 		
 	</header>
-	<h3 style="color:red; text-align: center;"><i>This designer is experimental, and therefore, may have some issues. These issues will be resolved, and new features will be added as well.</i></h3>
+	<h3 style="color:maroon; text-align: center;"><i>This designer is experimental, and therefore, may have some issues. These issues will be resolved, and new features will be added as well.</i></h3>
 	<div class="container">
 		<div class="box" id="option_selector">
 			<h2>Option Selector</h2>
-			<h3 style="color:red;"><i>Disabled options does not mean that these options are unavailable, 
-			it simply means that these options are not yet available in this 3D designer.
-			These options will be coming soon. In the meantime, call me if what you 
-			want is not in the options below.</i></h3>
+			<h3 style="color:maroon;"><i>Disabled options aren't unavailable—just not functional yet in this 3D designer. They're coming soon! Call me if you need something not listed below.</i></h3>
 			
 			<details id="banjoPresetSelect" open>
 				<summary>Banjo Presets</summary>
@@ -38,7 +35,7 @@
 						<button id="banjol3_4">L3-4</button>
 						<button id="banjol3_G">L3-G</button>
 					<h4>1954 Series</h4>
-						<button id="banjol5_100">L5-100</button>
+						<button id="banjol5_100" hidden disabled>L5-100</button>
 						<button id="banjol5_150">L5-150</button>
 						<button id="banjol5_250">L5-250</button>
 						<button id="banjol5_500">L5-500</button>
@@ -577,12 +574,11 @@
 		</div>
 	
 		<div class="box" id="model_display">
-		<!-- <h3 style="color:red;"><i>Please be patient, loading times can be slow as I work bugs out of the process.</i></h3> -->
+		
 			<model-viewer
 				id="viewer"
 				src=""
 				alt="3D model"
-				
 				camera-controls
 				loading="eager"
 				camera-orbit="-35deg 75deg 100%" 
@@ -594,7 +590,9 @@
 				ar
 				exposure="2"
 				style="width: 100%; height: 75vh; position: relative;" preload>
-    
+				
+				<h3 style="color:red;"><i></i></h3>
+				
 				<!-- Price Display (Top-Left) -->
 				<div style="
 					position: absolute;
@@ -606,8 +604,10 @@
 					border-radius: 5px;
 					font-size: 16px;
 					font-weight: bold;
-					font-family: Arial, sans-serif;">
-					<h3 style="margin: 0; font-size: 24px;">Total Price: $<span id="totalPrice"></span></h3>
+					font-family: Arial, sans-serif;
+					max-width: 150px;">
+					<h3 style="margin: 0; font-size: 12px;"><i>Please be patient - loading may be slow while I fix some bugs.</i></h3>
+					<h3 style="margin: 0; font-size: 24px;"><u><i>Total Price: </i></u>$<span id="totalPrice"></span></h3>
 				</div>
 
 				<!-- Controls Info (Bottom-Right) -->
