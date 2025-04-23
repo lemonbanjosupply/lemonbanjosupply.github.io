@@ -11,13 +11,14 @@ html, body {
 model-viewer {
 	display: flex;
 	width: 300px;
-	background-color: black;
 	height: 100%;
+	background-color: gray;
 	margin-left: auto;
 	margin-right: auto;
 }
-model-viewer::part(progress-bar) {
-	display: hidden;
+model-viewer::part(default-progress-bar) {
+	background-color: lime;
+	height: 1%;
 }
 
 .container {
