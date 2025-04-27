@@ -7,26 +7,16 @@
 		<link rel="stylesheet" href="assets/css/styles.css" media="screen and (min-width: 768px)">
 		<link rel="stylesheet" href="assets/css/mobile.css" media="screen and (max-width: 767px)">
 		<link rel="icon" type="image/x-con" href="assets/images/favicon.jpg">
-		<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
+		<script src="https://cdn.babylonjs.com/babylon.js"></script>
+		<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-		
+
 		<style>
-			@media (min-width: 768px) {
-				#mobile_message {
-					display: none;
-				}
-			}
-		
-			@media (max-width: 767px) {
-				#mobile_message {
-					display: block;
-					text-align: center;
-				}
-				
-				#banjo_designer {
-					display: none;
-				}
+			@media (min-width: 768px) { #mobile_message { display: none; } }
+			@media (max-width: 767px) { 
+				#mobile_message { display: block; text-align: center; }
+				#banjo_designer { display: none; }
 			}
 		</style>
 	</head>
@@ -598,78 +588,30 @@
 		</div>
 	
 		<div class="box" id="model_display">
-		
-			<model-viewer
-				id="viewer"
-				src=""
-				alt="3D model"
-				camera-controls
-				loading="lazy"
-				camera-orbit="-35deg 75deg 100%" 
-				camera-target="0m 20m 0m"
-				skybox-image="assets/images/pretoria_gardens_4k.jpg"
-				skybox-height="20m"
-				shadow-intensity="1"
-				shadow-light="5 30 -10"
-				ar
-				exposure="2"
-				style="width: 100%; height: 75vh; position: relative;" preload>
-				
-				<h3 style="color:red;"><i></i></h3>
-				
-				<!-- Price Display (Top-Left) -->
-				<div style="
-					position: absolute;
-					top: 10px;
-					left: 10px;
-					background: rgba(0, 0, 0, 0.7);
-					color: red;
-					padding: 5px 10px;
-					border-radius: 5px;
-					font-size: 16px;
-					font-weight: bold;
-					font-family: Arial, sans-serif;
-					max-width: 150px;">
-					<h3 style="margin: 0; font-size: 12px;"><i>Please be patient - loading may be slow while I fix some bugs.</i></h3>
-					<h3 style="margin: 0; font-size: 24px;"><u><i>Total Price: </i></u>$<span id="totalPrice"></span></h3>
-				</div>
+            <canvas id="renderCanvas" touch-action="none" style="width: 100%; height: 100%;"></canvas>
+        </div>
+    </div>
 
-				<!-- Controls Info (Bottom-Right) -->
-				<div style="
-					position: absolute;
-					bottom: 10px;
-					right: 10px;
-					background: rgba(0, 0, 0, 0.7);
-					color: white;
-					padding: 5px 10px;
-					border-radius: 5px;
-					font-size: 12px;
-					font-family: Arial, sans-serif;">
-					<h3 style="margin: 0; font-size: 12px;">Controls</h3>
-					<p style="margin: 5px 0;">Left Click: Rotate<br>Right Click: Pan<br>Scroll: Zoom</p>
-				</div>
-			</model-viewer>
-		</div>
-	</div>
-	
-	
-	<script src="assets/js/modelFile.js"></script> <!--Uses the form data to select which model file to use-->
-	<script src="assets/js/toneRingVisibility.js"></script> <!--Shows or hides different forms options depending on tone ring selection-->
-	<script src="assets/js/autoCloseDetails.js"></script><!--Controls the details panes-->
-	<script src="assets/js/archOrFlat.js"></script> <!--Controls visibility of arch or flat head-->
-	<script src="assets/js/resoHdw.js"></script> <!--Controls visibility and color of resonator banjo hardware -->
-	<script src="assets/js/tailpiece.js"></script> <!--Controls visibility and color of tailpiece -->
-	<script src="assets/js/neckFinish.js"></script>
-	<script src="assets/js/fbWood.js"></script>
-	<script src="assets/js/fbInlays.js"></script>
-	<script src="assets/js/hsOverlay.js"></script>
-	<script src="assets/js/hsInlays.js"></script>
-	<script src="assets/js/hsBinding.js"></script>
-	<script src="assets/js/resoBind.js"></script>
-	<script src="assets/js/concenRings.js"></script>
-	<script src="assets/js/resoFinish.js"></script>
-	<script src="assets/js/banjoPresets.js"></script>
-	<script src="assets/js/priceCalculator.js"></script>
-	
+
+	<script src="assets/js/modelFile.js"></script>
+    <!-- <script src="assets/js/toneRingVisibility.js"></script> -->
+    <!-- <script src="assets/js/autoCloseDetails.js"></script> -->
+    <!-- <script src="assets/js/archOrFlat.js"></script> -->
+    <!-- <script src="assets/js/resoHdw.js"></script> -->
+    <!-- <script src="assets/js/tailpiece.js"></script> -->
+    <!-- <script src="assets/js/neckFinish.js"></script> -->
+    <!-- <script src="assets/js/fbWood.js"></script> -->
+    <!-- <script src="assets/js/fbInlays.js"></script> -->
+    <!-- <script src="assets/js/hsOverlay.js"></script> -->
+    <!-- <script src="assets/js/hsInlays.js"></script> -->
+    <!-- <script src="assets/js/hsBinding.js"></script> -->
+    <!-- <script src="assets/js/resoBind.js"></script> -->
+    <!-- <script src="assets/js/concenRings.js"></script> -->
+    <!-- <script src="assets/js/resoFinish.js"></script> -->
+    <script src="assets/js/banjoPresets.js"></script>
+    <!-- <script src="assets/js/priceCalculator.js"></script> -->
+
+    <!-- Your new BabylonJS setup -->
+    <script src="assets/js/babylonSetup.js"></script>
 </body>
 </html>
