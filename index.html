@@ -10,6 +10,25 @@
 		<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+		
+		<style>
+			@media (min-width: 768px) {
+				#mobile_message {
+					display: none;
+				}
+			}
+		
+			@media (max-width: 767px) {
+				#mobile_message {
+					display: block;
+					text-align: center;
+				}
+				
+				#banjo_designer {
+					display: none;
+				}
+			}
+		</style>
 	</head>
 	
 	
@@ -20,7 +39,12 @@
 		
 	</header>
 	<h3 style="color:maroon; text-align: center;"><i>This designer is experimental, and therefore, may have some issues. These issues will be resolved, and new features will be added as well.</i></h3>
-	<div class="container">
+	
+	<div id="mobile_message">
+		<h2>This website currently does not load correctly on mobile devices. For an optimized experience, please use a desktop or laptop to access this website. I am sorry for any inconvenience at this time.</h2>
+	</div>
+	
+	<div class="container" id="banjo_designer">
 		<div class="box" id="option_selector">
 			<h2>Option Selector</h2>
 			<h3 style="color:maroon;"><i>Disabled options aren't unavailable—just not functional yet in this 3D designer. They're coming soon! Call me if you need something not listed below.</i></h3>
