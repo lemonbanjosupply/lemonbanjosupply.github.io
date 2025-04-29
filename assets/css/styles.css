@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	font-family: Garamond, Times New Roman;
 }
 
 html, body {
@@ -86,4 +87,18 @@ summary {
 
 summary:hover {
   background-color: #f0f0f0;
+}
+
+button {
+	background-color: #0A330F;
+	padding: 10px;
+	color: #FFFFFF;
+}
+
+button:hover {
+	background-color: #39FF14;
+}
+
+button:active {
+	background-color: #FFFF00;
 }
