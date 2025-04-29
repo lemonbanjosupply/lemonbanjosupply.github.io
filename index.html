@@ -76,7 +76,7 @@
 						<h3>Will your banjo be left-handed or right-handed?</h3>
 						<select name="RightLeft" id="RightLeftSelect">
 							<option value="rightHandBanjo">Right-handed</option>
-							<option value="leftHandBanjo" hidden disabled>Left-handed</option>
+							<option value="leftHandBanjo" disabled>Left-handed</option>
 						</select>
 					</div>
 
@@ -85,8 +85,8 @@
 						<h3>What type of banjo are you interested in?</h3>
 						<select name="banjoType" id="banjoTypeSelect">
 							<option value="resoBanjo">Resonator Banjo (Bluegrass)</option>
-							<option value="open11Banjo" hidden disabled>11-inch Open Back Banjo (Oldtime)</option>
-							<option value="open12Banjo" hidden disabled>12-inch Open Back Banjo (Oldtime)</option>
+							<option value="open11Banjo" disabled>11-inch Open Back Banjo (Oldtime)</option>
+							<option value="open12Banjo" disabled>12-inch Open Back Banjo (Oldtime)</option>
 						</select>
 					</div>
 					</form>		
@@ -204,8 +204,8 @@
 						<div class="optionDiv">
 							<h3>What scale length would you like?</h3>
 							<select name="scale" id="scaleSelect">
-								<option value="25-12" hidden disabled>25 1/2"</option>
-								<option value="26-14" hidden disabled>26 1/4" (Bowtie)</option>
+								<option value="25-12" disabled>25 1/2"</option>
+								<option value="26-14" disabled>26 1/4" (Bowtie)</option>
 								<option value="26-38">26 3/8" (Prewar)</option>
 							</select>
 						</div>
@@ -215,9 +215,9 @@
 							<h3>What nut width would you like?</h3>
 							<select name="nut" id="nutSelect">
 								<option value="1-316nut">1 3/16" (Standard)</option>
-								<option value="1-14nut" hidden disabled>1 1/4"</option>
-								<option value="1-516nut" hidden disabled>1 5/16" (Crowe)</option>
-								<option value="1-38nut" hidden disabled>1 3/8"</option>
+								<option value="1-14nut" disabled>1 1/4"</option>
+								<option value="1-516nut" disabled>1 5/16" (Crowe)</option>
+								<option value="1-38nut" disabled>1 3/8"</option>
 							</select>
 						</div>
 						
@@ -226,7 +226,7 @@
 							<h3>Would you like a radiused fretboard?</h3>
 							<select name="radius" id="radiusSelect">
 								<option value="noRadius">No Radius</option>
-								<option value="12SimRadius">12" Simple Radius</option>
+								<option value="12SimRadius" disabled>12" Simple Radius</option>
 							</select>
 						</div>
 						
@@ -234,9 +234,9 @@
 						<div class="optionDiv">
 							<h3>How many frets?</h3>
 							<select name="numFrets" id="numFretsSelect">
-								<option value="15frets" hidden disabled>15 + 2 frets with Scoop</option>
+								<option value="15frets" disabled>15 + 2 frets with Scoop</option>
 								<option value="22frets">22 frets</option>
-								<option value="24frets" hidden disabled>24 frets with extended fretboard</option>
+								<option value="24frets" disabled>24 frets with extended fretboard</option>
 							</select>
 						</div>
 						
@@ -246,7 +246,7 @@
 							<select name="fbWood" id="fbWoodSelect">
 								<option value="fbRose">Rosewood</option>
 								<option value="fbEbony">Ebony</option>
-								<option value="fbYellow" hidden disabled>Yellowheart</option>
+								<option value="fbYellow" disabled>Yellowheart</option>
 							</select>
 						</div>
 						
@@ -304,7 +304,7 @@
 						</div>
 						
 						<!-- Name Block -->
-						<div class="optionDiv">
+						<div class="optionDiv" hidden disabled>
 							<h3>What would you like your name block to read?</h3>
 							<p><i>The location of the name block will either be the 15th, 21st, 22nd, or 24th fret, depending on the inlay pattern selected and the number of frets selected</i></p>
 							<input type="radio" id="defaultBlockID" name="nameBlock" value="75Custom">
@@ -328,7 +328,7 @@
 						</div>
 						
 						<!-- Heel Cap Material -->
-						<div class="optionDiv">
+						<div class="optionDiv" hidden disabled>
 							<h3>Which heel cap material do you prefer?</h3>
 							<select name="heelCapMat" id="heelCapMatSelect">	
 								<option value="noHeelCap">None</option>
@@ -484,7 +484,7 @@
 							<h3>What type of resonator do you want?</h3>
 							<select name="resoType" id="resoTypeSelect">
 								<option value="standardReso">Standard Resonator</option>
-								<option value="TTReso" hidden disabled>Top-Tension Style Resonator</option>
+								<option value="TTReso" disabled>Top-Tension Style Resonator</option>
 							</select>
 						</div>
 						
@@ -495,9 +495,9 @@
 								<option value="resoStrMpl">Straight Maple</option>
 								<option value="resoCurMpl">Curly Maple</option>
 								<option value="resoMahog">Mahogany</option>
-								<option value="resoWalnut" hidden disabled>Walnut</option>
+								<option value="resoWalnut" disabled>Walnut</option>
 								<option value="resoBurlWalnut">Burled Walnut (Standard Resonator Only)</option>
-								<option value="resoQuiltMpl" hidden disabled>Quilted Maple (Standard Resonator Only)</option>
+								<option value="resoQuiltMpl" disabled>Quilted Maple (Standard Resonator Only)</option>
 							</select>
 						</div>
 						
