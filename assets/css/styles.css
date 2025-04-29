@@ -101,4 +101,5 @@ button:hover {
 
 button:active {
 	background-color: #FFFF00;
+	color: #000000;
 }
